@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 50" width="148" height="50" role="img" aria-label="Python">
+  <defs>
+  
+</defs>
+  <rect x="1" y="2" width="146" height="48" rx="9" fill="rgba(0,0,0,0.35)"></rect>
+  <rect width="148" height="50" rx="9" fill="#0A2030"></rect>
+  <rect width="148" height="3" rx="9" fill="#F8C200" opacity="0.9"></rect>
+  <rect width="38" height="50" rx="9" fill="rgba(255,255,255,0.04)"></rect>
+  <g transform="translate(9,15.0)" fill="#F8C200" stroke="#F8C200" stroke-width="0"><path d="M10 2.5c-2.5 0-4 .6-4 2V7h4v.5H5C3.6 7.5 2.5 8.6 2.5 10v1.5C2.5 13 3.6 14 5 14h1v-2H5c-.3 0-.5-.2-.5-.5V10c0-.3.2-.5.5-.5h8c1.4 0 2.5-1.1 2.5-2.5V4.5c0-1.4-1.5-2-4-2zm-1 2a.75.75 0 110 1.5.75.75 0 010-1.5z"></path><path d="M10 17.5c2.5 0 4-.6 4-2V13h-4v-.5H15c1.4 0 2.5-1.1 2.5-2.5V8.5C17.5 7 16.4 6 15 6h-1v2h1c.3 0 .5.2.5.5V10c0 .3-.2.5-.5.5H7c-1.4 0-2.5 1.1-2.5 2.5v2c0 1.4 1.5 2 4 2zm1-2a.75.75 0 110-1.5.75.75 0 010 1.5z"></path></g>
+  <line x1="38" y1="8" x2="38" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="1"></line>
+  <text x="44" y="22.0" font-family="Ubuntu,Arial,sans-serif" font-size="13" font-weight="700" fill="#F0EBE8" dominant-baseline="middle">Python</text>
+  <text x="44" y="37.0" font-family="Ubuntu,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#C8C0BB" dominant-baseline="middle">Language</text>
+</svg>

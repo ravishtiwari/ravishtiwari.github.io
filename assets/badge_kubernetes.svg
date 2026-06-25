@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 50" width="148" height="50" role="img" aria-label="Kubernetes">
+  <defs>
+  
+</defs>
+  <rect x="1" y="2" width="146" height="48" rx="9" fill="rgba(0,0,0,0.35)"></rect>
+  <rect width="148" height="50" rx="9" fill="#0D2145"></rect>
+  <rect width="148" height="3" rx="9" fill="#E95420" opacity="0.9"></rect>
+  <rect width="38" height="50" rx="9" fill="rgba(255,255,255,0.04)"></rect>
+  <g transform="translate(9,15.0)" fill="#E95420" stroke="#E95420" stroke-width="0"><circle cx="10" cy="10" r="7" fill="none" stroke-width="1.4"></circle><circle cx="10" cy="10" r="2"></circle><g stroke-width="1.3" stroke-linecap="round"><line x1="10" y1="3.5" x2="10" y2="5.5"></line><line x1="10" y1="14.5" x2="10" y2="16.5"></line><line x1="3.5" y1="10" x2="5.5" y2="10"></line><line x1="14.5" y1="10" x2="16.5" y2="10"></line><line x1="5.3" y1="5.3" x2="6.7" y2="6.7"></line><line x1="13.3" y1="13.3" x2="14.7" y2="14.7"></line><line x1="5.3" y1="14.7" x2="6.7" y2="13.3"></line><line x1="13.3" y1="6.7" x2="14.7" y2="5.3"></line></g></g>
+  <line x1="38" y1="8" x2="38" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="1"></line>
+  <text x="44" y="22.0" font-family="Ubuntu,Arial,sans-serif" font-size="13" font-weight="700" fill="#F0EBE8" dominant-baseline="middle">Kubernetes</text>
+  <text x="44" y="37.0" font-family="Ubuntu,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#C8C0BB" dominant-baseline="middle">CKA Certified</text>
+</svg>

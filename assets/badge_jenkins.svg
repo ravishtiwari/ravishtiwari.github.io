@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 50" width="148" height="50" role="img" aria-label="Jenkins">
+  <defs>
+  
+</defs>
+  <rect x="1" y="2" width="146" height="48" rx="9" fill="rgba(0,0,0,0.35)"></rect>
+  <rect width="148" height="50" rx="9" fill="#2C001E"></rect>
+  <rect width="148" height="3" rx="9" fill="#E95420" opacity="0.9"></rect>
+  <rect width="38" height="50" rx="9" fill="rgba(255,255,255,0.04)"></rect>
+  <g transform="translate(9,15.0)" fill="#E95420" stroke="#E95420" stroke-width="0"><circle cx="10" cy="9.5" r="6"></circle><circle cx="10" cy="9.5" r="3.5" fill="none" stroke-width="1.2"></circle><circle cx="10" cy="9.5" r="1.2"></circle><line x1="10" y1="3.5" x2="10" y2="6" stroke-width="1.5" stroke-linecap="round"></line><line x1="10" y1="13" x2="10" y2="15.5" stroke-width="1.5" stroke-linecap="round"></line><line x1="4" y1="9.5" x2="6.5" y2="9.5" stroke-width="1.5" stroke-linecap="round"></line><line x1="13.5" y1="9.5" x2="16" y2="9.5" stroke-width="1.5" stroke-linecap="round"></line></g>
+  <line x1="38" y1="8" x2="38" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="1"></line>
+  <text x="44" y="22.0" font-family="Ubuntu,Arial,sans-serif" font-size="13" font-weight="700" fill="#F0EBE8" dominant-baseline="middle">Jenkins</text>
+  <text x="44" y="37.0" font-family="Ubuntu,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#C8A0BB" dominant-baseline="middle">CI/CD</text>
+</svg>

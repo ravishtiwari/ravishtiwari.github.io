@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Ravish Tiwari — Solutions Architect · Cloud · DevOps · MLOps</title>
+<meta name="description" content="Ravish Tiwari — Solutions, DevOps &amp; MLOps Architect. 15+ years building production cloud systems across AWS, GCP and Azure."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Display:wght@400;500;700&family=Roboto:wght@300;400;500&family=Roboto+Mono:wght@400;500&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Ravish Tiwari" onclick="scrollToTop(event)">
+      <span class="mark">RT</span>
+      <span>
+        <div class="brand-name">Ravish Tiwari</div>
+        <div class="brand-sub">SOLUTIONS ARCHITECT</div>
+      </span>
+    </a>
+    <nav class="links" aria-label="Sections">
+      <a href="#architecture">Architecture</a>
+      <a href="#cloud">Cloud · MLOps</a>
+      <a href="#devops">DevOps</a>
+      <a href="#development">Dev</a>
+      <a href="#writing">Writing</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:8px;flex:none">
+      <div class="theme-wrap">
+        <span class="theme-icon">🎨</span>
+        <select id="theme-sel" class="theme-sel" onchange="applyTheme(this.value)" aria-label="Choose colour theme">
+          <option value="github-light">GitHub Light</option>
+          <option value="dark-ubuntu">Dark Ubuntu</option>
+          <option value="dark-plus">Dark+</option>
+          <option value="monokai">Monokai</option>
+          <option value="solarized-dark">Solarized Dark</option>
+          <option value="nord">Nord</option>
+          
+        </select>
+        <span class="theme-caret">▾</span>
+      </div>
+      <button class="btn-filled" onclick="openResume()">Résumé <span class="arr">↗</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="wrap hero">
+  <div>
+    <div class="eyebrow">Solutions Architect<span class="sep">//</span>Cloud<span class="sep">·</span>DevOps<span class="sep">·</span>MLOps</div>
+    <h1 class="head">Analyze the<br><span class="primary">problem first.</span><br><span class="tertiary">Pick the tool.</span></h1>
+    <p class="lede">Fifteen-plus years turning customer pain points into production systems across <strong>AWS, GCP, and Azure</strong>, from multi-account landing zones to <strong>GenAI inference at scale</strong>. I optimize for the problem in front of me, not the stack I already know.</p>
+    <div class="cta-row">
+      <button class="btn-filled" onclick="openResume()">Read the résumé <span class="arr">↗</span></button>
+      <a class="btn-tonal" href="#writing">Read the writing <span class="arr">↗</span></a>
+    </div>
+    <div class="metrics" role="list" aria-label="Career at a glance">
+      <div class="metric-card" role="listitem"><div class="val">15<span class="u">+</span></div><div class="lbl">Years in IT</div></div>
+      <div class="metric-card" role="listitem"><div class="val">3<span class="u"> clouds</span></div><div class="lbl">AWS · GCP · Azure</div></div>
+      <div class="metric-card" role="listitem"><div class="val">400M<span class="u"> docs</span></div><div class="lbl">Seeded in &lt;30 min</div></div>
+      <div class="metric-card" role="listitem"><div class="val">2000<span class="u">+</span></div><div class="lbl">Lambda concurrency</div></div>
+    </div>
+  </div>
+  <aside class="id-card" aria-label="Profile">
+    <div class="id-head">
+      <span>// IDENTITY</span>
+      <span class="pulse"><span class="dot"></span>AVAILABLE</span>
+    </div>
+    <div class="kv-grid">
+      <div class="k">ROLE</div><div class="v">Solutions / DevOps / MLOps Architect</div>
+      <div class="k">BASE</div><div class="v">India &middot; <b>remote-first</b></div>
+      <div class="k">CLOUDS</div><div class="v"><s2>AWS</s2> &middot; <s2>GCP</s2> &middot; <s2>Azure</s2> &middot; Azure Stack</div>
+      <div class="k">STACK</div><div class="v">Go &middot; Python &middot; Node &middot; Rails &middot; PHP</div>
+      <div class="k">FOCUS</div><div class="v"><b>GenAI / LLMOps</b> &middot; IaC &middot; Serverless</div>
+      <div class="k last">CERTS</div><div class="v last">CSA &middot; CDA &middot; CKA &middot; AZ-301 &middot; ZCE</div>
+    </div>
+    <div class="id-foot">// cost &amp; reliability are first-class design constraints</div>
+  </aside>
+</section>
+
+<!-- 01 ARCHITECTURE -->
+<section class="wrap sec" id="architecture">
+  <div class="reveal">
+    <div class="sec-head"><span class="idx">01</span><h2>Solutions Architecture</h2></div>
+    <p class="thesis">Architecture is the set of decisions that are <em>expensive to reverse</em>. I make them deliberately, working from PreSales pain points to feasible designs, with cost and reliability weighed up front.</p>
+  </div>
+  <div class="grid">
+    <article class="card span2 reveal">
+      <h3>400M-Document Serverless Re-Architecture</h3>
+      <div class="chip-metric">~6 hours &rarr; &lt;30 min &nbsp;&middot;&nbsp; 2,000+ Lambda concurrency</div>
+      <p>Re-platformed a high-GPU SageMaker Elasticsearch seeding workload onto AWS Lambda, delivered the whole pipeline as Terraform IaC, and mentored data scientists in converting notebooks to Lambda. 400M+ searchable documents seeded in under half an hour.</p>
+      <div class="tags"><span class="tag">AWS Lambda</span><span class="tag">Elasticsearch</span><span class="tag">SageMaker</span><span class="tag">Terraform</span><span class="tag">High concurrency</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>Multi-Account / Multi-Project Landing Zones</h3>
+      <p>Organization-scale account (AWS) and project (GCP) architecture as the governance foundation every workload and guardrail is built on.</p>
+      <div class="tags"><span class="tag">AWS Organizations</span><span class="tag">GCP</span><span class="tag">Governance</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>Multi-Tenant SaaS Platform</h3>
+      <div class="chip-metric">One deployment &middot; many customers</div>
+      <p>Re-architected a Node.js / React product so a single deployment serves many customers at a fraction of the cost, UI decoupled to S3 + CDN.</p>
+      <div class="tags"><span class="tag">SaaS</span><span class="tag">AWS</span><span class="tag">S3 + CDN</span><span class="tag">Node.js</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>Monolith to Serverless Migration</h3>
+      <p>Led modernization from PreSales to implementation: UI to static S3, REST platform to API Gateway, partner APIs to Lambda, auth to Cognito, decoupled piece by piece.</p>
+      <div class="tags"><span class="tag">API Gateway</span><span class="tag">Lambda</span><span class="tag">Cognito</span><span class="tag">Microservices</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>PreSales Solutioning</h3>
+      <p>Partnered with sales teams and customers to translate constraints and feasibility into custom multi-cloud solutions across AWS, GCP, Azure, and Azure Stack.</p>
+      <div class="tags"><span class="tag">PreSales</span><span class="tag">Multi-cloud</span><span class="tag">Solutioning</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- 02 CLOUD / MLOPS -->
+<section class="wrap sec" id="cloud">
+  <div class="reveal">
+    <div class="sec-head"><span class="idx">02</span><h2>Cloud &amp; MLOps</h2></div>
+    <p class="thesis">Multi-cloud isn't a buzzword here, it's <em>training on TPUs in one cloud and serving on GPUs in another</em>, because that's what the workload and the bill demanded.</p>
+  </div>
+  <div class="grid">
+    <article class="card reveal">
+      <h3>LLM Inference at Scale</h3>
+      <div class="chip-metric">A100 / L4 GPUs &middot; KubeRay autoscaling</div>
+      <p>Multi-GPU Llama2-based serving on GKE with vLLM and FastAPI on A100 and L4 GPUs, with GPU autoscaling driven by KubeRay.</p>
+      <div class="tags"><span class="tag">vLLM</span><span class="tag">FastAPI</span><span class="tag">GKE</span><span class="tag">KubeRay</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>Generative Media on TPU + GPU</h3>
+      <p>SDXL text-to-image inference on GKE with a JAX pipeline on Cloud TPU and L4 GPUs. Large image models hosted on Cloud TPU v5e.</p>
+      <div class="tags"><span class="tag">SDXL</span><span class="tag">JAX</span><span class="tag">Cloud TPU v5e</span><span class="tag">GKE</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>Gemma3 LoRA on Vertex AI</h3>
+      <p>Fine-tuned model inference on Vertex AI; fine-tuned Llama2-based models on custom datasets with ML teams using LoRA.</p>
+      <div class="tags"><span class="tag">Vertex AI</span><span class="tag">LoRA</span><span class="tag">Fine-tuning</span><span class="tag">Gemma3</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>Multi-Cloud ML Training</h3>
+      <div class="chip-metric">Cost &amp; ROI tracked per training run</div>
+      <p>PyTorch / TensorFlow on SageMaker, EC2 Deep-Learning VMs, GCP Compute and TPU v3; automated provisioning for large jobs with ROI tracking.</p>
+      <div class="tags"><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">SageMaker</span><span class="tag">TPU v3</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>MLOps Lifecycle</h3>
+      <p>Training-to-inference pipelines across AWS and GCP for GenAI and GenMedia workloads, with experiment tracking via Weights &amp; Biases on Kubernetes.</p>
+      <div class="tags"><span class="tag">MLOps</span><span class="tag">W&amp;B</span><span class="tag">Kubernetes</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>Serverless ML APIs</h3>
+      <p>Served pickle models as Lambda REST APIs with on-demand model loading, and made Python applications AWS IAM role-aware for secure inference.</p>
+      <div class="tags"><span class="tag">Lambda</span><span class="tag">REST API</span><span class="tag">IAM</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- 03 DEVOPS -->
+<section class="wrap sec" id="devops">
+  <div class="reveal">
+    <div class="sec-head"><span class="idx">03</span><h2>DevOps &amp; DevSecOps</h2></div>
+    <p class="thesis">A pipeline should make the secure, repeatable path the <em>easy one</em>. Security gates and infrastructure-as-code belong inside the build, not in a checklist bolted on after it.</p>
+  </div>
+  <div class="grid">
+    <article class="card reveal">
+      <h3>Enterprise DevSecOps Pipeline</h3>
+      <div class="chip-metric">Quality + security gates inline in CI</div>
+      <p>Declarative Jenkinsfile on Azure with Ansible deployments, integrating SonarQube, Nexus IQ, HP Fortify and HP WebInspect. Artifacts to Nexus and Docker registry, deployed to AKS.</p>
+      <div class="tags"><span class="tag">Jenkins</span><span class="tag">SonarQube</span><span class="tag">Nexus IQ</span><span class="tag">Fortify</span><span class="tag">AKS</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>HA Kubernetes on Azure</h3>
+      <p>kubeadm-bootstrapped HA cluster with an external etcd cluster, HPA autoscaling, and Prometheus / Grafana monitoring on the Microsoft platform.</p>
+      <div class="tags"><span class="tag">kubeadm</span><span class="tag">etcd</span><span class="tag">HPA</span><span class="tag">Prometheus</span><span class="tag">Grafana</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>Org-Wide Terraform Module Factory</h3>
+      <div class="chip-metric">IaC adoption at org scale</div>
+      <p>Naming / tagging factory for enforcement, a network factory, Go-based unit tests, per-module docs, and AWS / GCP boilerplates to drive IaC adoption across the business unit.</p>
+      <div class="tags"><span class="tag">Terraform</span><span class="tag">Go tests</span><span class="tag">AWS</span><span class="tag">GCP</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>Event-Driven Scheduled Jobs</h3>
+      <p>CloudWatch + SNS + SQS + Python Lambda + DynamoDB scheduled-job platform, with CloudWatch alarms wired to Slack via Lambda.</p>
+      <div class="tags"><span class="tag">CloudWatch</span><span class="tag">SNS / SQS</span><span class="tag">DynamoDB</span><span class="tag">Slack</span></div>
+    </article>
+    <article class="card span2 reveal">
+      <h3>Dockerized Services on ECS</h3>
+      <p>Containerized standalone services on ECS with Bitbucket to Jenkins to ECR CI/CD and automated deployments, as part of broader app modernization.</p>
+      <div class="tags"><span class="tag">Docker</span><span class="tag">ECS</span><span class="tag">ECR</span><span class="tag">CI/CD</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- 04 DEVELOPMENT -->
+<section class="wrap sec" id="development">
+  <div class="reveal">
+    <div class="sec-head"><span class="idx">04</span><h2>Development</h2></div>
+    <p class="thesis">A polyglot toolbox — <em>Go, Python, Node, Rails, PHP</em> — means the language is a choice that fits the problem, not a constraint carried into it.</p>
+  </div>
+  <div class="grid">
+    <article class="card reveal">
+      <h3>Hybrid Mobile App</h3>
+      <div class="chip-metric">Featured in Time Magazine, 2017</div>
+      <p>iOS / Android application with API on AWS, deployment automation via Jenkins for the backend and Fastlane for mobile releases.</p>
+      <div class="tags"><span class="tag">iOS</span><span class="tag">Android</span><span class="tag">AWS</span><span class="tag">Fastlane</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>FullBridge Platform</h3>
+      <div class="chip-metric">Role: Technical Lead</div>
+      <p>Led architecture and delivery of the FullBridge platform, a Ruby on Rails web application, alongside the engineering team at 3Pillar Global.</p>
+      <div class="tags"><span class="tag">Ruby on Rails</span><span class="tag">Technical Lead</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>Open API Platform for Partners</h3>
+      <div class="chip-metric">Reduced customer AWS spend</div>
+      <p>Partner-facing Open API on AWS API Gateway and Lambda with CodePipeline CI/CD, cutting AWS spend on those services for customers.</p>
+      <div class="tags"><span class="tag">API Gateway</span><span class="tag">Lambda</span><span class="tag">CodePipeline</span></div>
+    </article>
+    <article class="card reveal">
+      <h3>Reporting &amp; Background Jobs</h3>
+      <p>Reading-list conversion and reporting platform with notification-driven report delivery and flexible, customizable background-job workers.</p>
+      <div class="tags"><span class="tag">Notifications</span><span class="tag">Workers</span><span class="tag">Reporting</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- 05 CERTS -->
+<section class="wrap sec" id="certs">
+  <div class="reveal">
+    <div class="sec-head"><span class="idx">05</span><h2>Certifications</h2></div>
+    <div class="certs">
+      <div class="cert"><span class="ic">&#9670;</span><div><div>AWS Solutions Architect</div><div class="sub">Associate</div></div></div>
+      <div class="cert"><span class="ic">&#9671;</span><div><div>AWS Developer</div><div class="sub">Associate</div></div></div>
+      <div class="cert"><span class="ic">&#9096;</span><div><div>Kubernetes Administrator</div><div class="sub">CNCF CKA</div></div></div>
+      <div class="cert"><span class="ic">&#9632;</span><div><div>Azure AZ-301</div><div class="sub">Solutions Architect (Design)</div></div></div>
+      <div class="cert"><span class="ic">&#9679;</span><div><div>Zend Certified</div><div class="sub">PHP Engineer (ZCE)</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 WRITING -->
+<section class="wrap sec" id="writing">
+  <div class="reveal">
+    <div class="sec-head"><span class="idx">06</span><h2>Writing</h2></div>
+    <p class="thesis">Practitioner notes for engineers, where the argument is settled by <em>measurement, not opinion</em>.</p>
+    <div class="writing-list">
+      <a class="write-item" href="https://ravishtiwari.medium.com/fastapi-vs-fiber-a-benchmark-not-opinion-da1848c6caae" target="_blank" rel="noopener">
+        <div class="write-num">01</div>
+        <div class="write-body">
+          <h3>FastAPI vs Fiber: A Benchmark, Not an Opinion</h3>
+          <p>Go delivers 7x better latency under high load with half the resources. Numbers, not opinions.</p>
+        </div>
+        <div class="write-date">Jan 2026 ↗</div>
+      </a>
+      <a class="write-item" href="https://ravishtiwari.medium.com/optimise-docker-images-from-gbs-to-mbs-4645ccea6be6" target="_blank" rel="noopener">
+        <div class="write-num">02</div>
+        <div class="write-body">
+          <h3>Optimise Docker Images: From GBs to MBs</h3>
+          <p>Multi-stage builds, .dockerignore hygiene, removing build-tool hangovers. Under 20 MB.</p>
+        </div>
+        <div class="write-date">Sep 2025 ↗</div>
+      </a>
+      <a class="write-item" href="https://ravishtiwari.medium.com/is-genai-going-to-take-our-jobs-2996874a345a" target="_blank" rel="noopener">
+        <div class="write-num">03</div>
+        <div class="write-body">
+          <h3>Is GenAI Taking Our Jobs? A Reality Check</h3>
+          <p>The answer isn't binary. Like the IDE before it, how well it works depends on how well you use it.</p>
+        </div>
+        <div class="write-date">Apr 2025 ↗</div>
+      </a>
+      <a class="write-item" href="https://ravishtiwari.medium.com/running-large-models-in-production-c56f77e9486d" target="_blank" rel="noopener">
+        <div class="write-num">04</div>
+        <div class="write-body">
+          <h3>Running Large Models in Production (Part 2)</h3>
+          <p>vLLM, GPU autoscaling, and getting real ROI from every dollar spent on A100s.</p>
+        </div>
+        <div class="write-date">Nov 2024 ↗</div>
+      </a>
+      <a class="write-item" href="https://ravishtiwari.medium.com/improve-large-model-inference-in-production-8e195e81de86" target="_blank" rel="noopener">
+        <div class="write-num">05</div>
+        <div class="write-body">
+          <h3>Optimise Large Models in Production (Part 3)</h3>
+          <p>LoRA, QLoRA, quantization, hardware selection. Choosing the right fine-tuning approach.</p>
+        </div>
+        <div class="write-date">Jul 2024 ↗</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 07 CONTACT -->
+<section class="wrap contact-sec" id="contact">
+  <div class="reveal">
+    <div class="sec-head"><span class="idx">07</span><h2>Let's build something measurable.</h2></div>
+    <p class="thesis">Open to architecture, platform, and MLOps work. The fastest way to reach me is email.</p>
+    <div class="contact-links">
+      <button class="clink" onclick="openContact()"><span class="ic">&#9993;</span> Send a message</button>
+      <a class="clink" href="https://medium.com/@ravishtiwari" target="_blank" rel="noopener"><span class="ic">&#9998;</span> medium.com/@ravishtiwari</a>
+      <a class="clink" href="https://www.linkedin.com/in/ravish-tiwari" target="_blank" rel="noopener"><span class="ic" style="font-weight:700;font-size:13px">in</span> LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>RAVISH TIWARI &copy; <span id="yr"></span></span>
+    <span>BUILT WITH FIRST PRINCIPLES // NO TEMPLATES</span>
+  </div>
+</footer>
+
+<!-- ── CONTACT MODAL ──────────────────────────────────────────────────────── -->
+<div id="contact-modal" class="modal-overlay" style="display:none" role="dialog" aria-modal="true" aria-label="Send a message" onclick="handleContactOverlayClick(event)">
+  <div class="modal-box" style="width:min(500px,95vw)" onclick="event.stopPropagation()">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title">Send a message</div>
+        <div class="modal-sub">// I'll reply to your email directly</div>
+      </div>
+      <button class="modal-close" onclick="closeContact()" aria-label="Close">&#10005;</button>
+    </div>
+
+    <!-- success state -->
+    <div id="contact-success" class="contact-success" style="display:none">
+      <div class="success-icon">&#10003;</div>
+      <div class="success-title">Message sent!</div>
+      <div class="success-sub">Thanks — I'll get back to you soon.</div>
+      <button class="btn-submit" onclick="closeContact()">Done</button>
+    </div>
+
+    <!-- form state -->
+    <form id="contact-form" class="contact-form" onsubmit="submitContact(event)">
+      <div class="form-group">
+        <label class="form-label" for="cname">NAME</label>
+        <input id="cname" name="cname" class="form-input" type="text" required placeholder="Your name" autocomplete="name"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cemail">YOUR EMAIL</label>
+        <input id="cemail" name="cemail" class="form-input" type="email" required placeholder="you@example.com" autocomplete="email"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cmessage">MESSAGE</label>
+        <textarea id="cmessage" name="cmessage" class="form-textarea" required rows="5" placeholder="What's on your mind?"></textarea>
+      </div>
+      <div id="contact-error" class="form-error" style="display:none">Something went wrong — please try again.</div>
+      <button id="contact-submit" type="submit" class="btn-submit">Send message ↗</button>
+    </form>
+  </div>
+</div>
+
+<!-- ── PDF MODAL ──────────────────────────────────────────────────────────── -->
+<div id="pdf-modal" class="modal-overlay" style="display:none" role="dialog" aria-modal="true" aria-label="Resume viewer" onclick="handlePdfOverlayClick(event)">
+  <div class="pdf-modal-box" onclick="event.stopPropagation()">
+    <div class="pdf-toolbar">
+      <div class="pdf-file">
+        <span class="pdf-dot"></span>
+        <span class="pdf-name">Resume_Ravish_Tiwari_2026.pdf</span>
+      </div>
+      <div class="pdf-controls">
+        <button id="pdf-prev" class="pdf-btn" onclick="prevPage()" disabled>&#9664;</button>
+        <span id="pdf-pages" class="pdf-pages">— / —</span>
+        <button id="pdf-next" class="pdf-btn" onclick="nextPage()" disabled>&#9654;</button>
+        <a href="uploads/Resume_Ravish_Tiwari_2026.pdf" download class="pdf-download">&#8595; Download</a>
+        <button class="modal-close" onclick="closeResume()" aria-label="Close">&#10005;</button>
+      </div>
+    </div>
+    <div class="pdf-canvas-area">
+      <div id="pdf-loading" class="pdf-loading">
+        <div class="pdf-loading-icon">&#8987;</div>
+        Loading PDF…
+      </div>
+      <div id="pdf-error" class="pdf-error" style="display:none">
+        <div class="pdf-error-icon">&#128196;</div>
+        <div class="pdf-error-title">PDF not found</div>
+        <div>Add <strong>Resume_Ravish_Tiwari_2026.pdf</strong><br>to <strong>uploads/</strong> in the project root.</div>
+      </div>
+      <canvas id="pdf-canvas" style="display:none"></canvas>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  // ── copyright year ────────────────────────────────────────────────────────
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ── nav scroll border ─────────────────────────────────────────────────────
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  }, { passive: true });
+
+  // ── scroll-reveal (IntersectionObserver) ──────────────────────────────────
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(x) {
+        if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+    revealEls.forEach(function(el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function(el) { el.classList.add('in'); });
+  }
+
+  // ── keyboard handler ──────────────────────────────────────────────────────
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      if (document.getElementById('pdf-modal').style.display !== 'none') closeResume();
+      if (document.getElementById('contact-modal').style.display !== 'none') closeContact();
+    }
+  });
+
+  // ── PDF.js setup ──────────────────────────────────────────────────────────
+  if (window.pdfjsLib) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  }
+
+  // ── theme system ──────────────────────────────────────────────────────────
+  var ALL_VARS = [
+    '--md-sys-surface','--md-sys-surface-container-lowest',
+    '--md-sys-surface-container','--md-sys-surface-container-high',
+    '--md-sys-surface-container-highest','--md-sys-primary',
+    '--md-sys-on-primary','--md-sys-primary-container',
+    '--md-sys-on-primary-container','--md-sys-secondary',
+    '--md-sys-on-secondary','--md-sys-secondary-container',
+    '--md-sys-on-secondary-container','--md-sys-tertiary',
+    '--md-sys-on-tertiary','--md-sys-tertiary-container',
+    '--md-sys-on-tertiary-container','--md-sys-on-surface',
+    '--md-sys-on-surface-variant','--md-sys-outline',
+    '--md-sys-outline-variant','--nav-bg',
+  ];
+
+  var THEMES = {
+    'dark-plus': {
+      '--md-sys-surface':'#1E1E1E','--md-sys-surface-container-lowest':'#141414',
+      '--md-sys-surface-container':'#252526','--md-sys-surface-container-high':'#2D2D30',
+      '--md-sys-surface-container-highest':'#3C3C3C','--md-sys-primary':'#569CD6',
+      '--md-sys-on-primary':'#FFFFFF','--md-sys-primary-container':'#1A3A5C',
+      '--md-sys-on-primary-container':'#BCE3FF','--md-sys-secondary':'#4EC9B0',
+      '--md-sys-on-secondary':'#00352C','--md-sys-secondary-container':'#0D3A34',
+      '--md-sys-on-secondary-container':'#B0EDE3','--md-sys-tertiary':'#CE9178',
+      '--md-sys-on-tertiary':'#3E1A07','--md-sys-tertiary-container':'#4A2518',
+      '--md-sys-on-tertiary-container':'#FFDDD1','--md-sys-on-surface':'#D4D4D4',
+      '--md-sys-on-surface-variant':'#9B9B9B','--md-sys-outline':'#4E4E4E',
+      '--md-sys-outline-variant':'#2A2A2A','--nav-bg':'rgba(30,30,30,.92)',
+    },
+    'monokai': {
+      '--md-sys-surface':'#272822','--md-sys-surface-container-lowest':'#1A1A15',
+      '--md-sys-surface-container':'#3E3D32','--md-sys-surface-container-high':'#49483E',
+      '--md-sys-surface-container-highest':'#565446','--md-sys-primary':'#F92672',
+      '--md-sys-on-primary':'#FFFFFF','--md-sys-primary-container':'#5C0A2C',
+      '--md-sys-on-primary-container':'#FFBBD6','--md-sys-secondary':'#A6E22E',
+      '--md-sys-on-secondary':'#1A3000','--md-sys-secondary-container':'#3A500E',
+      '--md-sys-on-secondary-container':'#D8F8A0','--md-sys-tertiary':'#FD971F',
+      '--md-sys-on-tertiary':'#3D1C00','--md-sys-tertiary-container':'#5C3400',
+      '--md-sys-on-tertiary-container':'#FFDDB8','--md-sys-on-surface':'#F8F8F2',
+      '--md-sys-on-surface-variant':'#CFCFC2','--md-sys-outline':'#75715E',
+      '--md-sys-outline-variant':'#3E3D32','--nav-bg':'rgba(39,40,34,.92)',
+    },
+    'solarized-dark': {
+      '--md-sys-surface':'#002B36','--md-sys-surface-container-lowest':'#001A22',
+      '--md-sys-surface-container':'#073642','--md-sys-surface-container-high':'#0D4453',
+      '--md-sys-surface-container-highest':'#135260','--md-sys-primary':'#268BD2',
+      '--md-sys-on-primary':'#FFFFFF','--md-sys-primary-container':'#0A2D44',
+      '--md-sys-on-primary-container':'#A8D8FF','--md-sys-secondary':'#2AA198',
+      '--md-sys-on-secondary':'#003730','--md-sys-secondary-container':'#0A3330',
+      '--md-sys-on-secondary-container':'#9AEAE4','--md-sys-tertiary':'#B58900',
+      '--md-sys-on-tertiary':'#3D2C00','--md-sys-tertiary-container':'#3D2C00',
+      '--md-sys-on-tertiary-container':'#FFE09A','--md-sys-on-surface':'#EEE8D5',
+      '--md-sys-on-surface-variant':'#93A1A1','--md-sys-outline':'#586E75',
+      '--md-sys-outline-variant':'#073642','--nav-bg':'rgba(0,43,54,.92)',
+    },
+    'nord': {
+      '--md-sys-surface':'#2E3440','--md-sys-surface-container-lowest':'#242831',
+      '--md-sys-surface-container':'#3B4252','--md-sys-surface-container-high':'#434C5E',
+      '--md-sys-surface-container-highest':'#4C566A','--md-sys-primary':'#88C0D0',
+      '--md-sys-on-primary':'#1C2838','--md-sys-primary-container':'#28404C',
+      '--md-sys-on-primary-container':'#C8E8F0','--md-sys-secondary':'#81A1C1',
+      '--md-sys-on-secondary':'#1C3048','--md-sys-secondary-container':'#243548',
+      '--md-sys-on-secondary-container':'#C5D8EF','--md-sys-tertiary':'#EBCB8B',
+      '--md-sys-on-tertiary':'#3D3014','--md-sys-tertiary-container':'#4C3C14',
+      '--md-sys-on-tertiary-container':'#FFF0C8','--md-sys-on-surface':'#ECEFF4',
+      '--md-sys-on-surface-variant':'#D8DEE9','--md-sys-outline':'#4C566A',
+      '--md-sys-outline-variant':'#3B4252','--nav-bg':'rgba(46,52,64,.92)',
+    },
+    'dark-ubuntu': {
+      '--md-sys-surface':'#120A1E','--md-sys-surface-container-lowest':'#0C0614',
+      '--md-sys-surface-container':'#1E1030','--md-sys-surface-container-high':'#2A1640',
+      '--md-sys-surface-container-highest':'#341C50','--md-sys-primary':'#E95420',
+      '--md-sys-on-primary':'#FFFFFF','--md-sys-primary-container':'#5C1A00',
+      '--md-sys-on-primary-container':'#FFBBA0','--md-sys-secondary':'#7AACFF',
+      '--md-sys-on-secondary':'#002F6C','--md-sys-secondary-container':'#0D2145',
+      '--md-sys-on-secondary-container':'#D0E4FF','--md-sys-tertiary':'#F8C200',
+      '--md-sys-on-tertiary':'#3D2F00','--md-sys-tertiary-container':'#5C4700',
+      '--md-sys-on-tertiary-container':'#FFE17A','--md-sys-on-surface':'#EDE8F5',
+      '--md-sys-on-surface-variant':'#BDB5CC','--md-sys-outline':'#5A4870',
+      '--md-sys-outline-variant':'#2E1E45','--nav-bg':'rgba(18,10,30,.9)',
+      '--state-hover':'rgba(233,84,32,.08)','--state-focus':'rgba(233,84,32,.12)',
+      '--state-pressed':'rgba(233,84,32,.16)',
+    },
+  };
+
+  window.applyTheme = function(key) {
+    var root = document.documentElement;
+    ALL_VARS.forEach(function(v) { root.style.removeProperty(v); });
+    var overrides = THEMES[key];
+    if (overrides) {
+      Object.keys(overrides).forEach(function(k) {
+        root.style.setProperty(k, overrides[k]);
+      });
+    }
+    try { localStorage.setItem('portfolio-theme', key); } catch(e) {}
+    var sel = document.getElementById('theme-sel');
+    if (sel) sel.value = key;
+  };
+
+  // restore saved theme (default is github-light = :root values)
+  try {
+    var saved = localStorage.getItem('portfolio-theme');
+    if (saved && saved !== 'github-light') applyTheme(saved);
+    else if (saved) { var sel = document.getElementById('theme-sel'); if (sel) sel.value = saved; }
+  } catch(e) {}
+
+  // ── scroll to top ─────────────────────────────────────────────────────────
+  window.scrollToTop = function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // ── PDF viewer state ──────────────────────────────────────────────────────
+  var pdfDoc = null;
+  var pdfPage = 1;
+  var pdfTotal = 0;
+
+  function updatePdfUI() {
+    var pages = document.getElementById('pdf-pages');
+    var prev  = document.getElementById('pdf-prev');
+    var next  = document.getElementById('pdf-next');
+    if (pages) pages.textContent = pdfTotal ? (pdfPage + ' / ' + pdfTotal) : '— / —';
+    if (prev) prev.disabled = pdfPage <= 1;
+    if (next) next.disabled = pdfPage >= pdfTotal || pdfTotal === 0;
+  }
+
+  function renderPdfPage(n) {
+    if (!pdfDoc) return;
+    pdfDoc.getPage(n).then(function(page) {
+      var canvas = document.getElementById('pdf-canvas');
+      if (!canvas) return;
+      var area = canvas.parentElement;
+      var containerW = (area ? area.clientWidth : 800) - 48;
+      var native = page.getViewport({ scale: 1 });
+      var scale = Math.min(containerW / native.width, 2.4);
+      var vp = page.getViewport({ scale: scale });
+      canvas.width  = vp.width;
+      canvas.height = vp.height;
+      canvas.style.display = 'block';
+      page.render({ canvasContext: canvas.getContext('2d'), viewport: vp });
+    });
+  }
+
+  function loadPdf() {
+    if (!window.pdfjsLib) {
+      document.getElementById('pdf-loading').style.display = 'none';
+      document.getElementById('pdf-error').style.display = 'block';
+      return;
+    }
+    pdfjsLib.getDocument('uploads/Resume_Ravish_Tiwari_2026.pdf').promise
+      .then(function(pdf) {
+        pdfDoc = pdf;
+        pdfPage = 1;
+        pdfTotal = pdf.numPages;
+        document.getElementById('pdf-loading').style.display = 'none';
+        updatePdfUI();
+        renderPdfPage(1);
+      })
+      .catch(function() {
+        document.getElementById('pdf-loading').style.display = 'none';
+        document.getElementById('pdf-error').style.display = 'block';
+      });
+  }
+
+  window.openResume = function() {
+    var modal = document.getElementById('pdf-modal');
+    // reset state
+    document.getElementById('pdf-loading').style.display = 'block';
+    document.getElementById('pdf-error').style.display = 'none';
+    document.getElementById('pdf-canvas').style.display = 'none';
+    pdfDoc = null; pdfPage = 1; pdfTotal = 0;
+    updatePdfUI();
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    setTimeout(loadPdf, 60);
+  };
+
+  window.closeResume = function() {
+    document.getElementById('pdf-modal').style.display = 'none';
+    document.body.style.overflow = '';
+    pdfDoc = null;
+  };
+
+  window.prevPage = function() {
+    if (pdfPage <= 1) return;
+    pdfPage--;
+    updatePdfUI();
+    renderPdfPage(pdfPage);
+  };
+
+  window.nextPage = function() {
+    if (pdfPage >= pdfTotal) return;
+    pdfPage++;
+    updatePdfUI();
+    renderPdfPage(pdfPage);
+  };
+
+  window.handlePdfOverlayClick = function(e) {
+    if (e.target === document.getElementById('pdf-modal')) closeResume();
+  };
+
+  // ── contact modal ─────────────────────────────────────────────────────────
+  window.openContact = function() {
+    var modal = document.getElementById('contact-modal');
+    document.getElementById('contact-success').style.display = 'none';
+    document.getElementById('contact-form').style.display = 'flex';
+    document.getElementById('contact-error').style.display = 'none';
+    document.getElementById('contact-form').reset();
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    // focus first field
+    setTimeout(function() {
+      var f = document.getElementById('cname');
+      if (f) f.focus();
+    }, 80);
+  };
+
+  window.closeContact = function() {
+    document.getElementById('contact-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  };
+
+  window.handleContactOverlayClick = function(e) {
+    if (e.target === document.getElementById('contact-modal')) closeContact();
+  };
+
+  window.submitContact = function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('contact-submit');
+    var errEl = document.getElementById('contact-error');
+    errEl.style.display = 'none';
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    var fd = new FormData(e.target);
+    // Replace YOUR_API_ENDPOINT with your API Gateway URL to enable form submission
+    fetch('YOUR_API_ENDPOINT', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name:    fd.get('cname'),
+        email:   fd.get('cemail'),
+        message: fd.get('cmessage'),
+      }),
+    })
+    .then(function(r) {
+      if (r.ok) {
+        document.getElementById('contact-form').style.display = 'none';
+        document.getElementById('contact-success').style.display = 'block';
+      } else {
+        errEl.style.display = 'block';
+        btn.textContent = 'Send message ↗';
+        btn.disabled = false;
+      }
+    })
+    .catch(function() {
+      errEl.style.display = 'block';
+      btn.textContent = 'Send message ↗';
+      btn.disabled = false;
+    });
+  };
+
+})();
+</script>
+</body>
+</html>

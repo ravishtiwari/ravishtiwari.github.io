@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 50" width="148" height="50" role="img" aria-label="vLLM">
+  <defs>
+  
+</defs>
+  <rect x="1" y="2" width="146" height="48" rx="9" fill="rgba(0,0,0,0.35)"></rect>
+  <rect width="148" height="50" rx="9" fill="#2D0A3E"></rect>
+  <rect width="148" height="3" rx="9" fill="#F8C200" opacity="0.9"></rect>
+  <rect width="38" height="50" rx="9" fill="rgba(255,255,255,0.04)"></rect>
+  <g transform="translate(9,15.0)" fill="#F8C200" stroke="#F8C200" stroke-width="0"><rect x="3" y="3" width="14" height="14" rx="3"></rect><path d="M7 7l3 6 3-6" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g>
+  <line x1="38" y1="8" x2="38" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="1"></line>
+  <text x="44" y="22.0" font-family="Ubuntu,Arial,sans-serif" font-size="13" font-weight="700" fill="#F0EBE8" dominant-baseline="middle">vLLM</text>
+  <text x="44" y="37.0" font-family="Ubuntu,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#C8C0BB" dominant-baseline="middle">Inference</text>
+</svg>

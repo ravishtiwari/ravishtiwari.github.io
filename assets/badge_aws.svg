@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 50" width="148" height="50" role="img" aria-label="AWS">
+  <defs>
+  
+</defs>
+  <rect x="1" y="2" width="146" height="48" rx="9" fill="rgba(0,0,0,0.35)"></rect>
+  <rect width="148" height="50" rx="9" fill="#1E3A6E"></rect>
+  <rect width="148" height="3" rx="9" fill="#F8C200" opacity="0.9"></rect>
+  <rect width="38" height="50" rx="9" fill="rgba(255,255,255,0.04)"></rect>
+  <g transform="translate(9,15.0)" fill="#F8C200" stroke="#F8C200" stroke-width="0"><path fill-rule="evenodd" d="M10 6.5c-2.2 0-4 1.1-4 2.5 0 .5.2 1 .6 1.4A3.3 3.3 0 006 11.5C6 12.9 7.8 14 10 14s4-1.1 4-2.5c0-.5-.2-1-.6-1.4.4-.4.6-.9.6-1.4 0-1.4-1.8-2.5-4-2.5zm-2.5 3c0-.8 1.1-1.5 2.5-1.5s2.5.7 2.5 1.5-.7.9-.7.9H8.2s-.7-.1-.7-.9zm-1 2c0-.5.3-.8.6-1 .4.5 1.6.9 2.9.9s2.5-.4 2.9-.9c.3.2.6.5.6 1 0 .8-1.1 1.5-2.5 1.5S6.5 12.3 6.5 11.5z"></path></g>
+  <line x1="38" y1="8" x2="38" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="1"></line>
+  <text x="44" y="22.0" font-family="Ubuntu,Arial,sans-serif" font-size="13" font-weight="700" fill="#F0EBE8" dominant-baseline="middle">AWS</text>
+  <text x="44" y="37.0" font-family="Ubuntu,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#C8C0BB" dominant-baseline="middle">Cloud</text>
+</svg>

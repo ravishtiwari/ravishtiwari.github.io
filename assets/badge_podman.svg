@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 50" width="148" height="50" role="img" aria-label="Podman">
+  <defs>
+  
+</defs>
+  <rect x="1" y="2" width="146" height="48" rx="9" fill="rgba(0,0,0,0.35)"></rect>
+  <rect width="148" height="50" rx="9" fill="#0D2145"></rect>
+  <rect width="148" height="3" rx="9" fill="#E95420" opacity="0.9"></rect>
+  <rect width="38" height="50" rx="9" fill="rgba(255,255,255,0.04)"></rect>
+  <g transform="translate(9,15.0)" fill="#E95420" stroke="#E95420" stroke-width="0"><path d="M10 5.5a4 4 0 100 6.5A4 4 0 0010 5.5zm0 1.5a2.5 2.5 0 110 3.5 2.5 2.5 0 010-3.5z"></path><path d="M7.5 12.5c-.5.7-.5 1.5 0 2l1 .7h3l1-.7c.5-.5.5-1.3 0-2L11 12H9z"></path><circle cx="8.5" cy="9" r=".8"></circle><circle cx="11.5" cy="9" r=".8"></circle><path d="M9 10.5c0 .6.4 1 1 1s1-.4 1-1" fill="none" stroke-width="1" stroke-linecap="round"></path></g>
+  <line x1="38" y1="8" x2="38" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="1"></line>
+  <text x="44" y="22.0" font-family="Ubuntu,Arial,sans-serif" font-size="13" font-weight="700" fill="#F0EBE8" dominant-baseline="middle">Podman</text>
+  <text x="44" y="37.0" font-family="Ubuntu,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#C8C0BB" dominant-baseline="middle">Containers</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 50" width="148" height="50" role="img" aria-label="Rails">
+  <defs>
+  
+</defs>
+  <rect x="1" y="2" width="146" height="48" rx="9" fill="rgba(0,0,0,0.35)"></rect>
+  <rect width="148" height="50" rx="9" fill="#0A2030"></rect>
+  <rect width="148" height="3" rx="9" fill="#F8C200" opacity="0.9"></rect>
+  <rect width="38" height="50" rx="9" fill="rgba(255,255,255,0.04)"></rect>
+  <g transform="translate(9,15.0)" fill="#F8C200" stroke="#F8C200" stroke-width="0"><path d="M3 14c0-4.4 3.1-7 7-7 2.5 0 4.7 1.4 5.9 3.5L14 11.7c-.8-1.5-2.3-2.7-4-2.7C7.2 9 5 11.2 5 14H3zm4.5 0c0-1.4 1.1-2.5 2.5-2.5 1 0 1.9.6 2.3 1.5L10.5 14H7.5v0z"></path></g>
+  <line x1="38" y1="8" x2="38" y2="42" stroke="rgba(255,255,255,0.12)" stroke-width="1"></line>
+  <text x="44" y="22.0" font-family="Ubuntu,Arial,sans-serif" font-size="13" font-weight="700" fill="#F0EBE8" dominant-baseline="middle">Rails</text>
+  <text x="44" y="37.0" font-family="Ubuntu,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#C8C0BB" dominant-baseline="middle">Language</text>
+</svg>
