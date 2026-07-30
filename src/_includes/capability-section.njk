@@ -1,0 +1,16 @@
+<section class="wrap sec" id="{{ section.id }}">
+  <div class="reveal">
+    <div class="sec-head"><span class="idx">{{ section.index }}</span><h2>{{ section.title }}</h2></div>
+    <p class="thesis">{{ section.thesis | safe }}</p>
+  </div>
+  <div class="grid">
+    {% for card in section.cards %}
+      <article class="card {{ card.span or '' }} reveal">
+        <h3>{{ card.title }}</h3>
+        {% if card.metric %}<div class="chip-metric">{{ card.metric }}</div>{% endif %}
+        <p>{{ card.description }}</p>
+        <div class="tags">{% for tag in card.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

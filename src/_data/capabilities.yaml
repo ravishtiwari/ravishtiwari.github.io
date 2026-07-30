@@ -1,0 +1,95 @@
+- id: architecture
+  index: "01"
+  title: Solutions Architecture
+  navLabel: Architecture
+  thesis: Architecture is the set of decisions that are <em>expensive to reverse</em>. I make them deliberately, working from PreSales pain points to feasible designs, with cost and reliability weighed up front.
+  cards:
+    - title: 400M-Document Serverless Re-Architecture
+      metric: ~6 hours → <30 min · 2,000+ Lambda concurrency
+      span: span2
+      description: Re-platformed a high-GPU SageMaker Elasticsearch seeding workload as a Serverless solution. 400M+ searchable documents seeded in under half an hour.
+      tags: [AWS Lambda, Elasticsearch, SageMaker, Terraform, High concurrency]
+    - title: Multi-Account / Multi-Project Landing Zones
+      description: Organization-scale account (AWS) and project (GCP) architecture as the governance foundation every workload and guardrail is built on.
+      tags: [AWS Organizations, GCP, Governance]
+    - title: Multi-Tenant SaaS Platform
+      metric: One deployment · many customers
+      description: Re-architected a Node.js / React product so a single deployment serves many customers at a fraction of the cost, UI decoupled to S3 + CDN.
+      tags: [SaaS, AWS, S3 + CDN, Node.js]
+    - title: Monolith to Serverless Migration
+      description: Led modernization from PreSales to implementation, decoupling UI, REST platform, partner APIs, and authentication piece by piece.
+      tags: [API Gateway, Lambda, Cognito, Microservices]
+    - title: PreSales Solutioning
+      description: Partnered with sales teams and customers to translate constraints and feasibility into custom multi-cloud solutions.
+      tags: [PreSales, Multi-cloud, Solutioning]
+- id: cloud
+  index: "02"
+  title: Cloud & MLOps
+  navLabel: Cloud · MLOps
+  thesis: Multi-cloud isn't a buzzword here, it's <em>training on TPUs in one cloud and serving on GPUs in another</em>, because that's what the workload and the bill demanded.
+  cards:
+    - title: LLM Inference at Scale
+      metric: A100 / L4 GPUs · KubeRay autoscaling
+      description: Multi-GPU Llama2-based serving on GKE with vLLM and FastAPI on A100 and L4 GPUs, with GPU autoscaling driven by KubeRay.
+      tags: [vLLM, FastAPI, GKE, KubeRay]
+    - title: Generative Media on TPU + GPU
+      description: SDXL text-to-image inference on GKE with a JAX pipeline on Cloud TPU and L4 GPUs.
+      tags: [SDXL, JAX, Cloud TPU v5e, GKE]
+    - title: Gemma3 LoRA on Vertex AI
+      description: Fine-tuned model inference on Vertex AI and Llama2-based models on custom datasets using LoRA.
+      tags: [Vertex AI, LoRA, Fine-tuning, Gemma3]
+    - title: Multi-Cloud ML Training
+      metric: Cost & ROI tracked per training run
+      description: PyTorch / TensorFlow on SageMaker, EC2 deep-learning VMs, GCP Compute and TPU v3 with automated provisioning.
+      tags: [PyTorch, TensorFlow, SageMaker, TPU v3]
+    - title: MLOps Lifecycle
+      description: Training-to-inference pipelines across AWS and GCP, with experiment tracking via Weights & Biases on Kubernetes.
+      tags: [MLOps, W&B, Kubernetes]
+    - title: Serverless ML APIs
+      description: Served pickle models as Lambda REST APIs with on-demand model loading and IAM-aware Python applications.
+      tags: [Lambda, REST API, IAM]
+- id: devops
+  index: "03"
+  title: DevOps & DevSecOps
+  navLabel: DevOps
+  thesis: A pipeline should make the secure, repeatable path the <em>easy one</em>. Security gates and infrastructure-as-code belong inside the build.
+  cards:
+    - title: Enterprise DevSecOps Pipeline
+      metric: Quality + security gates inline in CI
+      description: Declarative Jenkinsfile on Azure with Ansible, SonarQube, Nexus IQ, Fortify, WebInspect, Nexus, Docker registry, and AKS.
+      tags: [Jenkins, SonarQube, Nexus IQ, Fortify, AKS]
+    - title: HA Kubernetes on Azure
+      description: kubeadm-bootstrapped HA cluster with external etcd, HPA autoscaling, and Prometheus / Grafana monitoring.
+      tags: [kubeadm, etcd, HPA, Prometheus, Grafana]
+    - title: Org-Wide Terraform Module Factory
+      metric: IaC adoption at org scale
+      description: Naming and tagging factory, network factory, Go unit tests, module docs, and AWS / GCP boilerplates.
+      tags: [Terraform, Go tests, AWS, GCP]
+    - title: Event-Driven Scheduled Jobs
+      description: CloudWatch, SNS, SQS, Python Lambda, DynamoDB scheduled jobs, and Slack alerts.
+      tags: [CloudWatch, SNS / SQS, DynamoDB, Slack]
+    - title: Dockerized Services on ECS
+      span: span2
+      description: Containerized services on ECS with Bitbucket-to-Jenkins-to-ECR CI/CD and automated deployment.
+      tags: [Docker, ECS, ECR, CI/CD]
+- id: development
+  index: "04"
+  title: Development
+  navLabel: Dev
+  thesis: A polyglot toolbox — <em>Go, Python, Node, Rails, PHP</em> — means the language is a choice that fits the problem.
+  cards:
+    - title: Hybrid Mobile App
+      metric: Featured in Time Magazine, 2017
+      description: iOS / Android application with API on AWS, Jenkins backend deployments, and Fastlane mobile releases.
+      tags: [iOS, Android, AWS, Fastlane]
+    - title: FullBridge Platform
+      metric: "Role: Technical Lead"
+      description: Led architecture and delivery of the FullBridge Ruby on Rails platform alongside the 3Pillar Global engineering team.
+      tags: [Ruby on Rails, Technical Lead]
+    - title: Open API Platform for Partners
+      metric: Reduced customer AWS spend
+      description: Partner-facing API on API Gateway and Lambda with CodePipeline CI/CD, lowering AWS spend.
+      tags: [API Gateway, Lambda, CodePipeline]
+    - title: Reporting & Background Jobs
+      description: Reading-list conversion and reporting platform with notification-driven delivery and customizable workers.
+      tags: [Notifications, Workers, Reporting]

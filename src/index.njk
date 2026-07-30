@@ -1,0 +1,46 @@
+---
+layout: base.njk
+---
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="{{ site.name }}" onclick="scrollToTop(event)">
+      <span class="mark">{{ site.initials }}</span><span><span class="brand-name">{{ site.name }}</span><span class="brand-sub">{{ site.role | upper }}</span></span>
+    </a>
+    <nav class="links" aria-label="Sections">{% for section in capabilities %}<a href="#{{ section.id }}">{{ section.navLabel }}</a>{% endfor %}<a href="#writing">Writing</a></nav>
+    <div style="display:flex;align-items:center;gap:8px;flex:none">
+      <div class="theme-wrap"><span class="theme-icon">🎨</span><select id="theme-sel" class="theme-sel" onchange="applyTheme(this.value)" aria-label="Choose colour theme">
+        <option value="github-light">GitHub Light</option><option value="dark-ubuntu">Dark Ubuntu</option><option value="dark-plus">Dark+</option><option value="monokai">Monokai</option><option value="solarized-dark">Solarized Dark</option><option value="nord">Nord</option>
+      </select><span class="theme-caret">▾</span></div>
+      <button class="btn-filled" onclick="openResume()">Résumé <span class="arr">↗</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div>
+      <div class="eyebrow">{{ hero.eyebrow }}</div>
+      <h1 class="head">{{ hero.headline | safe }}</h1>
+      <p class="lede">{{ hero.intro | safe }}</p>
+      <div class="cta-row"><button class="btn-filled" onclick="openResume()">Read the résumé <span class="arr">↗</span></button><a class="btn-tonal" href="#writing">Read the writing <span class="arr">↗</span></a></div>
+      <div class="metrics" role="list" aria-label="Career at a glance">{% for metric in hero.metrics %}<div class="metric-card" role="listitem"><div class="val">{{ metric.value }}<span class="u">{{ metric.unit }}</span></div><div class="lbl">{{ metric.label }}</div></div>{% endfor %}</div>
+    </div>
+    <aside class="id-card" aria-label="Profile"><div class="id-head"><span>// IDENTITY</span><span class="pulse"><span class="dot"></span>{{ hero.profile.availability }}</span></div><div class="kv-grid">{% for field in hero.profile.fields %}<div class="k {% if loop.last %}last{% endif %}">{{ field.label }}</div><div class="v {% if loop.last %}last{% endif %}">{{ field.value | safe }}</div>{% endfor %}</div><div class="id-foot">{{ hero.profile.footer }}</div></aside>
+  </section>
+
+  <section class="wrap sec" id="skills"><div class="reveal"><div class="sec-head"><span class="idx">00</span><h2>Core Skills</h2></div><div class="tags" style="margin-top:24px">{% for skill in skills %}<span class="tag">{{ skill.name }}</span>{% endfor %}</div></div></section>
+
+  {% for section in capabilities %}{% include "capability-section.njk" %}{% endfor %}
+
+  <section class="wrap sec" id="certs"><div class="reveal"><div class="sec-head"><span class="idx">05</span><h2>Certifications</h2></div><div class="certs">{% for cert in certifications %}<div class="cert"><span class="ic">{{ cert.icon }}</span><div><div>{{ cert.name }}</div><div class="sub">{{ cert.level }}</div></div></div>{% endfor %}</div></div></section>
+
+<section class="wrap sec" id="writing"><div class="reveal"><div class="sec-head"><span class="idx">06</span><h2>Writing</h2></div><p class="thesis">{{ site.writing.intro | safe }}</p><div class="writing-list">{% for post in collections.writing | reverse %}{% if loop.index <= site.writing.limit %}<a class="write-item" href="{{ post.data.externalUrl }}" target="_blank" rel="noopener"><div class="write-num">0{{ loop.index }}</div><div class="write-body"><h3>{{ post.data.title }}</h3><p>{{ post.data.summary }}</p></div><div class="write-date">{{ post.data.dateLabel }} ↗</div></a>{% endif %}{% endfor %}</div></div></section>
+
+  <section class="wrap contact-sec" id="contact"><div class="reveal"><h2>Let’s build something useful.</h2><p class="thesis">The fastest way to reach me is email.</p><div class="contact-links"><button class="clink" onclick="openContact()"><span class="ic">✉</span> Send a message</button><a class="clink" href="{{ site.links.medium }}" target="_blank" rel="noopener"><span class="ic">✎</span> medium.com/@ravishtiwari</a><a class="clink" href="{{ site.links.linkedin }}" target="_blank" rel="noopener"><span class="ic" style="font-weight:700;font-size:13px">in</span> LinkedIn</a></div></div></section>
+</main>
+
+<footer class="foot"><div class="wrap foot-in"><span>{{ site.name | upper }} © <span id="yr"></span></span><span>{{ site.footer }}</span></div></footer>
+
+<div id="contact-modal" class="modal-overlay" style="display:none" role="dialog" aria-modal="true" aria-label="Send a message" onclick="handleContactOverlayClick(event)"><div class="modal-box" style="width:min(500px,95vw)" onclick="event.stopPropagation()"><div class="modal-head"><div><div class="modal-title">Send a message</div><div class="modal-sub">// I'll reply to your email directly</div></div><button class="modal-close" onclick="closeContact()" aria-label="Close">✕</button></div><div id="contact-success" class="contact-success" style="display:none"><div class="success-icon">✓</div><div class="success-title">Message sent!</div><div class="success-sub">Thanks — I'll get back to you soon.</div><button class="btn-submit" onclick="closeContact()">Done</button></div><form id="contact-form" class="contact-form" onsubmit="submitContact(event)"><div class="form-group"><label class="form-label" for="cname">NAME</label><input id="cname" name="cname" class="form-input" type="text" required placeholder="Your name" autocomplete="name"></div><div class="form-group"><label class="form-label" for="cemail">YOUR EMAIL</label><input id="cemail" name="cemail" class="form-input" type="email" required placeholder="you@example.com" autocomplete="email"></div><div class="form-group"><label class="form-label" for="cmessage">MESSAGE</label><textarea id="cmessage" name="cmessage" class="form-textarea" required rows="5" placeholder="What's on your mind?"></textarea></div><div id="contact-error" class="form-error" style="display:none"></div><button id="contact-submit" type="submit" class="btn-submit">Send message ↗</button></form></div></div>
+
+<div id="pdf-modal" class="modal-overlay" style="display:none" role="dialog" aria-modal="true" aria-label="Resume viewer" onclick="handlePdfOverlayClick(event)"><div class="pdf-modal-box" onclick="event.stopPropagation()"><div class="pdf-toolbar"><div class="pdf-file"><span class="pdf-dot"></span><span class="pdf-name">{{ site.resumeFileName }}</span></div><div class="pdf-controls"><button id="pdf-prev" class="pdf-btn" onclick="prevPage()" disabled>◀</button><span id="pdf-pages" class="pdf-pages">— / —</span><button id="pdf-next" class="pdf-btn" onclick="nextPage()" disabled>▶</button><a href="{{ site.resumePath }}" download class="pdf-download">↓ Download</a><button class="modal-close" onclick="closeResume()" aria-label="Close">✕</button></div></div><div class="pdf-canvas-area"><div id="pdf-loading" class="pdf-loading"><div class="pdf-loading-icon">⌛</div>Loading PDF…</div><div id="pdf-error" class="pdf-error" style="display:none"><div class="pdf-error-icon">📄</div><div class="pdf-error-title">PDF not found</div></div><canvas id="pdf-canvas" style="display:none"></canvas></div></div></div>

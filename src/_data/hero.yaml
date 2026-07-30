@@ -1,0 +1,32 @@
+eyebrow: Solutions Architect // Cloud · DevOps · MLOps
+headline: Analyze the<br><span class="primary">problem first.</span><br><span class="tertiary">Pick the tool.</span>
+intro: Fifteen-plus years turning customer pain points into production systems across <strong>AWS, GCP, and Azure</strong>, from multi-account landing zones to <strong>GenAI inference at scale</strong>. I optimize for the problem in front of me, not the stack I already know.
+metrics:
+  - value: "15"
+    unit: "+"
+    label: Years in IT
+  - value: "3"
+    unit: clouds
+    label: AWS · GCP · Azure
+  - value: 400M
+    unit: docs
+    label: Seeded in <30 min
+  - value: "2000"
+    unit: "+"
+    label: Lambda concurrency
+profile:
+  availability: AVAILABLE
+  fields:
+    - label: ROLE
+      value: Solutions / DevOps / MLOps Architect
+    - label: BASE
+      value: India · <b>remote-first</b>
+    - label: CLOUDS
+      value: <s2>AWS</s2> · <s2>GCP</s2> · <s2>Azure</s2> · Azure Stack
+    - label: STACK
+      value: Go · Python · Node · Rails · PHP
+    - label: FOCUS
+      value: <b>GenAI / LLMOps</b> · IaC · Serverless
+    - label: CERTS
+      value: CSA · CDA · CKA · AZ-301 · ZCE
+  footer: // cost & reliability are first-class design constraints

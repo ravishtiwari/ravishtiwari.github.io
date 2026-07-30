@@ -1,0 +1,8 @@
+- name: AWS
+- name: GCP
+- name: Azure
+- name: Kubernetes
+- name: Terraform
+- name: Python
+- name: Go
+- name: GenAI / LLMOps
