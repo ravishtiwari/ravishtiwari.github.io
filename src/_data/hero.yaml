@@ -11,9 +11,16 @@ metrics:
   - value: 400M
     unit: docs
     label: Seeded in <30 min
-  - value: "2000"
+  - value: "2500"
     unit: "+"
     label: Lambda concurrency
+  - value : Accelerators
+    unit: " infra "
+    label: Cloud TPU · GPU · AWS Trainium
+  - value: Container Platforms
+    unit: ""
+    label: Kubernetes - GKE, EKS, Self hosted
+
 profile:
   availability: AVAILABLE
   fields:
@@ -22,11 +29,13 @@ profile:
     - label: BASE
       value: India · <b>remote-first</b>
     - label: CLOUDS
-      value: <s2>AWS</s2> · <s2>GCP</s2> · <s2>Azure</s2> · Azure Stack
+      value: <s2>AWS</s2> · <s2>GCP</s2> · <s2>Azure</s2> 
     - label: STACK
-      value: Go · Python · Node · Rails · PHP
+      value: Go · Python · Node · Rails · PHP 
     - label: FOCUS
-      value: <b>GenAI / LLMOps</b> · IaC · Serverless
+      value: <b>GenAI / MLOps/ LLMOps</b> · IaC · Cost Aware infra· Serverless
+    - label: GEN AI
+      value: Inferencing · LLM Observability · LLM Security · Agentic Security
     - label: CERTS
       value: CSA · CDA · CKA · AZ-301 · ZCE
   footer: // cost & reliability are first-class design constraints

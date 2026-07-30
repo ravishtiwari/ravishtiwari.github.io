@@ -1,7 +1,7 @@
 name: Ravish Tiwari
 initials: RT
 role: Solutions Architect
-title: Ravish Tiwari — Solutions Architect · Cloud · DevOps · MLOps
+title: Ravish Tiwari — Solutions Architect · Cloud · DevOps · MLOps · LLMOps 
 description: Ravish Tiwari — Solutions, DevOps & MLOps Architect. 15+ years building production cloud systems across AWS, GCP and Azure.
 defaultTheme: github-light
 resumePath: /uploads/Resume_Ravish_Tiwari_2026.pdf
@@ -11,7 +11,7 @@ contact:
   captchaSiteKey: ""
   metadataFields: [origin, referrer, userAgent, pageUrl, submittedAt]
 writing:
-  limit: 5
+  limit: 7
   intro: Practitioner notes for engineers, where the argument is settled by <em>measurement, not opinion</em>.
 links:
   medium: https://medium.com/@ravishtiwari
