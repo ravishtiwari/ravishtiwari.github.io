@@ -9,6 +9,10 @@
         <h3>{{ card.title }}</h3>
         {% if card.metric %}<div class="chip-metric">{{ card.metric }}</div>{% endif %}
         <p>{{ card.description }}</p>
+        {% if card.details %}
+        <div class="card-details">{{ card.details | safe }}</div>
+        <button class="card-expand-btn" aria-expanded="false">Read more</button>
+        {% endif %}
         <div class="tags">{% for tag in card.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>
       </article>
     {% endfor %}

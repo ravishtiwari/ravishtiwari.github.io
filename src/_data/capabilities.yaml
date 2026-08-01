@@ -8,20 +8,30 @@
       metric: ~6 hours → <30 min · 2,000+ Lambda concurrency
       span: span2
       description: Re-platformed a high-GPU SageMaker Elasticsearch seeding workload as a Serverless solution. 400M+ searchable documents seeded in under half an hour.
-      tags: [AWS Lambda, Elasticsearch, SageMaker, Terraform, High concurrency]
+      details: "Re-platformed a GPU-heavy ML training pipeline into a fully serverless architecture. Converted exploratory IPython notebooks into production Lambda functions, enabling 400M+ searchable documents to be seeded in under 30 minutes with 2,000+ concurrent Lambda executions orchestrated via SQS and managed by Terraform."
+      tags: [AWS Lambda, Elasticsearch, SageMaker, Terraform, SQS, CloudWatch, Python]
+    - title: Cloud Management Platform
+      metric: CMP ·  SaaS · Multi-Tenant
+      span: span2
+      description: Led Architecture and Development of a Cloud Management Platform
+      details: "Architected and let development of a multi-tenant CMP platform on AWS. A CMP that that usage Read-Only access of customers AWS and Azure account, gathers details of spend, running infra, utilisation and other FinOps metrices. Based on FinOps metrics recommend - Cost Saving recommendations and AWS Best Practices and help customers save on infra cost, improve account security posture and implement best practices."
+      tags: [Multi-Tenant, SaaS, AWS, Serverless, Even-Drive-Architecture, Python, Terraform]
     - title: Multi-Account / Multi-Project Landing Zones
       description: Organization-scale account (AWS) and project (GCP) architecture as the governance foundation every workload and guardrail is built on.
-      tags: [AWS Organizations, GCP, Governance]
+      tags: [AWS Organizations, GCP, Governance, Landing Zones]
     - title: Multi-Tenant SaaS Platform
       metric: One deployment · many customers
-      description: Re-architected a Node.js / React product so a single deployment serves many customers at a fraction of the cost, UI decoupled to S3 + CDN.
-      tags: [SaaS, AWS, S3 + CDN, Node.js]
+      description: Re-architected a Node.js + Python and React product so a single deployment serves many customers at a fraction of the cost, UI decoupled to S3 + CDN.
+      details: "Migrated a monolithic Node.js / React application to a single-deployment multi-tenant architecture. Decoupled the UI to S3 + CDN, implemented tenant isolation at the data layer, and reduced per-customer infrastructure cost significantly compared to the original per-tenant deployment model."
+      tags: [Multi-Tenant, SaaS, AWS, S3, CDN, Node.js, Python, Terraform]
     - title: Monolith to Serverless Migration
       description: Led modernization from PreSales to implementation, decoupling UI, REST platform, partner APIs, and authentication piece by piece.
-      tags: [API Gateway, Lambda, Cognito, Microservices]
+      details: "Led end-to-end modernisation from presales solutioning through implementation. Decomposed a monolithic application by decoupling the UI first, then REST APIs, then partner integrations, and finally authentication — each phase delivered independently with zero-downtime cutover. Stack: API Gateway, Lambda, Cognito, S3."
+      tags: [API Gateway, Lambda, Cognito, Serverless]
     - title: PreSales Solutioning
       description: Partnered with sales teams and customers to translate constraints and feasibility into custom multi-cloud solutions.
       tags: [PreSales, Multi-cloud, Solutioning]
+
 - id: cloud
   index: "02"
   title: Cloud & MLOps
@@ -31,23 +41,31 @@
     - title: LLM Inference at Scale
       metric: A100 / L4 GPUs · KubeRay autoscaling
       description: Multi-GPU Llama2-based serving on GKE with vLLM and FastAPI on A100 and L4 GPUs, with GPU autoscaling driven by KubeRay.
+      details: "Deployed multi-GPU Llama 2-based serving on GKE using vLLM and FastAPI across A100 and L4 GPUs. KubeRay managed autoscaling of inference workers. Included Terraform-provisioned infrastructure, comprehensive load testing, and per-request cost estimation."
       tags: [vLLM, FastAPI, GKE, KubeRay]
     - title: Generative Media on TPU + GPU
       description: SDXL text-to-image inference on GKE with a JAX pipeline on Cloud TPU and L4 GPUs.
+      details: "SDXL text-to-image inference on GKE with a JAX pipeline on Cloud TPU v5e and L4 GPUs. Benchmarked inference latency and throughput across T4, L4, A100, and TPU v5e to justify hardware selection based on cost-per-image and quality trade-offs."
       tags: [SDXL, JAX, Cloud TPU v5e, GKE]
     - title: Gemma3 LoRA on Vertex AI
-      description: Fine-tuned model inference on Vertex AI and Llama2-based models on custom datasets using LoRA.
+      description: Fine-tuned Gemma 3 model inference on Vertex AI using LoRA adapters for domain-specific tasks.
       tags: [Vertex AI, LoRA, Fine-tuning, Gemma3]
+    - title: LLM Fine-Tuning
+      description: Custom-dataset fine-tuning of large language models using LoRA and full fine-tuning approaches.
+      tags: [LoRA, Fine-tuning, LLM, Custom Datasets]
     - title: Multi-Cloud ML Training
       metric: Cost & ROI tracked per training run
       description: PyTorch / TensorFlow on SageMaker, EC2 deep-learning VMs, GCP Compute and TPU v3 with automated provisioning.
+      details: "PyTorch and TensorFlow training workloads on SageMaker, EC2 deep-learning instances, GCP Compute Engine, and TPU v3. Included config-driven multi-region provisioning interfaces built with Python cloud SDKs, enabling training teams to select infrastructure via configuration keys. Cost and ROI tracked per training run."
       tags: [PyTorch, TensorFlow, SageMaker, TPU v3]
     - title: MLOps Lifecycle
-      description: Training-to-inference pipelines across AWS and GCP, with experiment tracking via Weights & Biases on Kubernetes.
-      tags: [MLOps, W&B, Kubernetes]
+      description: Training-to-inference pipelines across AWS and GCP, with ML experiment tracking on Kubernetes.
+      tags: [MLOps, Experiment Tracking, Kubernetes]
     - title: Serverless ML APIs
       description: Served pickle models as Lambda REST APIs with on-demand model loading and IAM-aware Python applications.
+      details: "Served scikit-learn pickle models as REST APIs via Lambda with on-demand model loading. IAM-aware Python applications ensured role-based access to model endpoints. Designed for cost efficiency — cold starts optimised via provisioned concurrency on high-traffic endpoints."
       tags: [Lambda, REST API, IAM]
+
 - id: devops
   index: "03"
   title: DevOps & DevSecOps
@@ -56,22 +74,28 @@
   cards:
     - title: Enterprise DevSecOps Pipeline
       metric: Quality + security gates inline in CI
-      description: Declarative Jenkinsfile on Azure with Ansible, SonarQube, Nexus IQ, Fortify, WebInspect, Nexus, Docker registry, and AKS.
-      tags: [Jenkins, SonarQube, Nexus IQ, Fortify, AKS]
+      description: Declarative Jenkinsfile on Azure with Ansible, SonarQube, Nexus IQ, Fortify, WebInspect, Nexus, Docker registry, and Kubernetes.
+      details: "Designed and implemented a full DevSecOps pipeline with inline quality and security gates. Build sequence: compile → SonarQube static analysis → Nexus IQ dependency scan → Fortify SAST → WebInspect DAST → artifact publish to Nexus → Docker build → Kubernetes deployment. Ansible playbooks managed environment provisioning and configuration drift."
+      tags: [Jenkins, SonarQube, Nexus IQ, Fortify, Kubernetes]
     - title: HA Kubernetes on Azure
       description: kubeadm-bootstrapped HA cluster with external etcd, HPA autoscaling, and Prometheus / Grafana monitoring.
+      details: "kubeadm-bootstrapped HA cluster with external etcd, HPA autoscaling, CSI storage provisioning, and Prometheus / Grafana monitoring. Ansible playbooks managed node provisioning and cluster lifecycle on Azure and Azure Stack environments."
       tags: [kubeadm, etcd, HPA, Prometheus, Grafana]
     - title: Org-Wide Terraform Module Factory
       metric: IaC adoption at org scale
       description: Naming and tagging factory, network factory, Go unit tests, module docs, and AWS / GCP boilerplates.
+      details: "Built an organisation-wide library of reusable Terraform modules covering networking, compute, storage, and IAM across AWS and GCP. Each module included Go-based unit tests, auto-generated documentation, and enforced naming/tagging conventions. Served as the IaC foundation for all new infrastructure provisioning."
       tags: [Terraform, Go tests, AWS, GCP]
     - title: Event-Driven Scheduled Jobs
-      description: CloudWatch, SNS, SQS, Python Lambda, DynamoDB scheduled jobs, and Slack alerts.
-      tags: [CloudWatch, SNS / SQS, DynamoDB, Slack]
+      description: CloudWatch, SNS, SQS, Python Lambda, DynamoDB scheduled jobs.
+      details: "Event-driven architecture using CloudWatch scheduled events triggering SNS/SQS message routing to Python Lambda functions. DynamoDB served as the state store for job execution tracking and idempotency."
+      tags: [CloudWatch, SNS / SQS, DynamoDB]
     - title: Dockerized Services on ECS
       span: span2
       description: Containerized services on ECS with Bitbucket-to-Jenkins-to-ECR CI/CD and automated deployment.
-      tags: [Docker, ECS, ECR, CI/CD]
+      details: "Containerised microservices deployed on ECS with ECR as the container registry. CI/CD pipeline from Bitbucket to Jenkins to ECR with automated ECS service updates. Terraform managed all infrastructure. CloudWatch alarms with Slack notifications for service health monitoring."
+      tags: [Docker, ECS, ECR, CI/CD, Slack]
+
 - id: development
   index: "04"
   title: Development
@@ -81,15 +105,26 @@
     - title: Hybrid Mobile App
       metric: Featured in Time Magazine, 2017
       description: iOS / Android application with API on AWS, Jenkins backend deployments, and Fastlane mobile releases.
+      details: "iOS and Android application serving a large-scale user base, with backend APIs on AWS Lambda. Jenkins managed backend deployments while Fastlane automated mobile releases to App Store and Google Play. Fabric.io provided crash reporting and analytics. Push notifications via SNS, email via SES, file storage on S3, and data persistence in DynamoDB."
       tags: [iOS, Android, AWS, Fastlane]
     - title: FullBridge Platform
       metric: "Role: Technical Lead"
-      description: Led architecture and delivery of the FullBridge Ruby on Rails platform alongside the 3Pillar Global engineering team.
+      description: Led architecture and delivery of the FullBridge Ruby on Rails platform.
       tags: [Ruby on Rails, Technical Lead]
     - title: Open API Platform for Partners
       metric: Reduced customer AWS spend
       description: Partner-facing API on API Gateway and Lambda with CodePipeline CI/CD, lowering AWS spend.
+      details: "Partner-facing REST API built on API Gateway and Lambda with CodePipeline CI/CD. CloudFormation templates managed multi-environment deployments. Cognito handled partner authentication with MFA. API throttling and usage quotas prevented abuse and reduced customer AWS spend."
       tags: [API Gateway, Lambda, CodePipeline]
     - title: Reporting & Background Jobs
       description: Reading-list conversion and reporting platform with notification-driven delivery and customizable workers.
+      details: "University reading-list conversion and reporting platform with notification-driven delivery, customisable worker pools, and SPARQL/RDF query patterns for semantic data. MongoDB aggregation pipelines generated complex reports with configurable templates."
       tags: [Notifications, Workers, Reporting]
+    - title: Prediction Engine
+      description: Personalised recommendation engine providing data-driven suggestions based on user profiles and activity.
+      details: "Built a prediction engine serving personalised recommendations. AWS CloudFront delivered static assets, Angular powered the frontend, and Spring MVC handled backend API logic. Dockerised deployment with Jenkins CI/CD pipelines for automated builds and releases."
+      tags: [Angular, Spring MVC, Docker, Jenkins, AWS CloudFront]
+    - title: Auction & Marketplace Platform
+      description: Full-featured web auction platform with multi-format bidding, web stores, and payment gateway integration.
+      details: "Developed a complete auction platform supporting multiple auction types (standard, reserve, Dutch). Built payment gateway abstraction layer for multi-provider support, CMS-based web store management, and concurrent bidding logic with race-condition handling. PHP backend with MySQL, jQuery frontend."
+      tags: [PHP, MySQL, jQuery, Payment Gateways, E-commerce]

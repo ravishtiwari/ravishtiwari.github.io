@@ -4,5 +4,6 @@
 - name: Kubernetes
 - name: Terraform
 - name: Python
-- name: Go
-- name: GenAI / MLOps / LLMOps
+- name: Cost Aware Infra
+- name: LLM Inferecing
+- name: GenAI / MLOps / LLMOps / LLM Observability

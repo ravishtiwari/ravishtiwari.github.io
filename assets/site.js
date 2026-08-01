@@ -36,6 +36,24 @@
     revealEls.forEach(function (element) { observer.observe(element); });
   } else revealEls.forEach(function (element) { element.classList.add('in'); });
 
+  // Card expand / collapse
+  document.querySelectorAll('.card-expand-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var details = btn.previousElementSibling;
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      if (expanded) {
+        details.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Read more';
+      } else {
+        details.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = 'Show less';
+      }
+    });
+  });
+
   if (window.pdfjsLib) window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
   function updatePdfUi() { document.getElementById('pdf-pages').textContent = pdfTotal ? pdfPage + ' / ' + pdfTotal : '— / —'; document.getElementById('pdf-prev').disabled = pdfPage <= 1; document.getElementById('pdf-next').disabled = pdfPage >= pdfTotal || !pdfTotal; }
   function renderPdfPage(pageNumber) { pdfDoc.getPage(pageNumber).then(function (page) { var canvas = document.getElementById('pdf-canvas'); var area = canvas.parentElement; var nativeViewport = page.getViewport({ scale: 1 }); var viewport = page.getViewport({ scale: Math.min((area.clientWidth - 48) / nativeViewport.width, 2.4) }); canvas.width = viewport.width; canvas.height = viewport.height; canvas.style.display = 'block'; page.render({ canvasContext: canvas.getContext('2d'), viewport: viewport }); }); }

@@ -181,11 +181,15 @@
   
   /* M3 metric cards — surface container elevated */
   .metrics{
-    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,auto);
+    grid-auto-flow:column;gap:1px;
     background:var(--md-sys-outline-variant);
     border:1px solid var(--md-sys-outline-variant);
     border-radius:var(--md-sys-shape-lg);overflow:hidden;
-    max-width:400px
+    max-width:none
+  }
+  @media(max-width:640px){
+    .metrics{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-flow:row}
   }
   .metric-card{background:var(--md-sys-surface-container);padding:14px 18px}
   .metric-card .val{
@@ -287,6 +291,24 @@
     font-size:1.05rem;margin-bottom:10px;letter-spacing:-.005em
   }
   .card p{margin:0 0 14px;color:var(--md-sys-on-surface-variant);font-size:.93rem;line-height:1.6}
+  /* ── card expand / collapse ─────────────────────────────────── */
+  .card-details{
+    display:none;color:var(--md-sys-on-surface-variant);
+    font-size:.91rem;line-height:1.65;
+    margin:0 0 12px;padding:10px 0 0;
+    border-top:1px solid var(--md-sys-outline-variant)
+  }
+  .card-details.open{display:block;animation:cardExpand .25s ease forwards}
+  @keyframes cardExpand{
+    from{opacity:0;transform:translateY(-6px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  .card-expand-btn{
+    font-family:var(--md-ref-typeface-plain);font-size:.85rem;font-weight:500;
+    color:var(--md-sys-primary);background:none;border:none;
+    padding:2px 0;cursor:pointer;transition:color .2s
+  }
+  .card-expand-btn:hover{color:var(--md-sys-on-surface)}
   /* M3 assist chip for metrics */
   .chip-metric{
     display:inline-flex;align-items:center;

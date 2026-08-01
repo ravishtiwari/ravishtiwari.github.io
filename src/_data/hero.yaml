@@ -1,6 +1,6 @@
-eyebrow: Solutions Architect // Cloud · DevOps · MLOps
+eyebrow: Solutions Architect // Cloud · DevOps · MLOps · Security
 headline: Analyze the<br><span class="primary">problem first.</span><br><span class="tertiary">Pick the tool.</span>
-intro: Fifteen-plus years turning customer pain points into production systems across <strong>AWS, GCP, and Azure</strong>, from multi-account landing zones to <strong>GenAI inference at scale</strong>. I optimize for the problem in front of me, not the stack I already know.
+intro: Fifteen-plus years turning customer pain points into production systems across <strong>AWS, GCP, and Azure</strong>, from multi-account landing zones to <strong>GenAI inference at scale</strong>. I build <strong>MLOps pipelines</strong> with experiment tracking, orchestrate workloads on <strong>Kubernetes</strong> (GKE and self-hosted HA clusters), and embed <strong>DevSecOps gates</strong> — SonarQube, Fortify, Trivy, Secret Scan — inline in CI. I optimize for the problem in front of me, not the stack I already know.
 metrics:
   - value: "15"
     unit: "+"
@@ -11,31 +11,40 @@ metrics:
   - value: 400M
     unit: docs
     label: Seeded in <30 min
-  - value: "2500"
+  - value: "2000"
     unit: "+"
     label: Lambda concurrency
   - value : Accelerators
-    unit: " infra "
-    label: Cloud TPU · GPU · AWS Trainium
-  - value: Container Platforms
+    unit: " infra"
+    label: Cloud TPU · GPU
+  - value: Containers
+    unit: " tools"
+    label: Kubernetes - GKE, EKS, AKS, RKE2, Self hosted
+  - value: Inferencing Platforms
     unit: ""
-    label: Kubernetes - GKE, EKS, Self hosted
+    label: RayServe, KubeRay, KServe, TGI, VertexAI, vLLM, SGLang
+  - value: MLOps, LLMOps
+    unit: ""
+    label: LangFuse, Evidently, W&B, AIMHub, NeMo, Prisido
+
 
 profile:
   availability: AVAILABLE
   fields:
     - label: ROLE
-      value: Solutions / DevOps / MLOps Architect
+      value:  DevOps / Solutions / MLOps Architect
     - label: BASE
       value: India · <b>remote-first</b>
     - label: CLOUDS
-      value: <s2>AWS</s2> · <s2>GCP</s2> · <s2>Azure</s2> 
+      value: <s2>AWS</s2> · <s2>GCP</s2> · <s2>Azure</s2>
     - label: STACK
       value: Go · Python · Node · Rails · PHP 
     - label: FOCUS
-      value: <b>GenAI / MLOps/ LLMOps</b> · IaC · Cost Aware infra· Serverless
+      value: <b>GenAI / MLOps / LLMOps</b> · IaC · <s2>DevSecOps</s2> · Cost Aware Infra · Serverless · Async Architectures
     - label: GEN AI
-      value: Inferencing · LLM Observability · LLM Security · Agentic Security
+      value: Inferencing -> Selft hosted · LLM Observability · LLM Security
+    - label: SECURITY
+      value: <s2>DevSecOps </s2>  · SonarQube · Fortify · PaloAlto Prisma  · Trivy  
     - label: CERTS
       value: CSA · CDA · CKA · AZ-301 · ZCE
   footer: // cost & reliability are first-class design constraints
