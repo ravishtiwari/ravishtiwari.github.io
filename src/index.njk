@@ -6,7 +6,7 @@ layout: base.njk
     <a class="brand" href="#top" aria-label="{{ site.name }}" onclick="scrollToTop(event)">
       <span class="mark">{{ site.initials }}</span><span><span class="brand-name">{{ site.name }}</span><span class="brand-sub">{{ site.role | upper }}</span></span>
     </a>
-    <nav class="links" aria-label="Sections">{% for section in capabilities %}<a href="#{{ section.id }}">{{ section.navLabel }}</a>{% endfor %}<a href="#writing">Writing</a></nav>
+    <nav class="links" aria-label="Sections">{% for section in capabilities %}<a href="#{{ section.id }}">{{ section.navLabel }}</a>{% endfor %}<a href="#writing">Writing</a><a href="/context-tax/">Context Tax</a></nav>
     <div style="display:flex;align-items:center;gap:8px;flex:none">
       <div class="theme-wrap"><span class="theme-icon">🎨</span><select id="theme-sel" class="theme-sel" onchange="applyTheme(this.value)" aria-label="Choose colour theme">
         <option value="github-light">GitHub Light</option><option value="dark-ubuntu">Dark Ubuntu</option><option value="dark-plus">Dark+</option><option value="monokai">Monokai</option><option value="solarized-dark">Solarized Dark</option><option value="nord">Nord</option>
