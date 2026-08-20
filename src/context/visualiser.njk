@@ -1,0 +1,60 @@
+---
+layout: base.njk
+permalink: /context/visualiser.html
+title: Context Visualiser
+description: See global preferences, project knowledge, and task context compose into a focused AI context window.
+bodyClass: tool-page context-visualiser-page
+pageStyles: /assets/context-tools.css
+pageScript: /assets/context-visualiser.js
+---
+{% include "site-nav.njk" %}
+<main class="tool-shell">
+  <p class="tool-kicker">Context management / composition</p>
+  <h1 class="tool-title">See your <em>context stack</em></h1>
+  <p class="tool-subtitle">Choose a working context. Watch global preferences, project knowledge, and the actual task compose into one focused context window.</p>
+
+  <p class="section-label">Choose a context</p>
+  <div class="scenario-row" id="scenarios" role="group" aria-label="Context scenarios">
+    <button class="sc-btn active" type="button" data-id="developer" aria-pressed="true">01 — Developer</button>
+    <button class="sc-btn" type="button" data-id="designer" aria-pressed="false">02 — Designer</button>
+    <button class="sc-btn" type="button" data-id="writer" aria-pressed="false">03 — Writer</button>
+    <button class="sc-btn" type="button" data-id="analyst" aria-pressed="false">04 — Analyst</button>
+  </div>
+
+  <section class="stat-row" aria-label="Context effectiveness">
+    <div class="stat"><div class="stat-label">Effective attention</div><div class="stat-val focused" id="s-attention">96%</div></div>
+    <div class="stat"><div class="stat-label">Repetition risk</div><div class="stat-val good" id="s-repetition">4%</div></div>
+    <div class="stat"><div class="stat-label">Noise load</div><div class="stat-val good" id="s-noise">8%</div></div>
+  </section>
+
+  <section class="visualiser" aria-labelledby="visual-title">
+    <div class="window-chrome"><span class="chrome-dot" style="background:var(--task)"></span><span class="chrome-dot" style="background:var(--project)"></span><span class="chrome-dot" style="background:var(--global)"></span><span class="chrome-title" id="visual-title">Context assembly</span></div>
+    <div class="flow-canvas" id="flow-canvas">
+      <div class="flow-line" aria-hidden="true"></div>
+      <article class="layer global"><div class="layer-icon">G</div><div class="layer-copy"><div class="layer-name">Global config</div><div class="layer-detail" id="global-detail"></div><div class="layer-chips" id="global-chips"></div></div><div class="layer-pct" id="global-pct">22%</div></article>
+      <article class="layer project"><div class="layer-icon">P</div><div class="layer-copy"><div class="layer-name">Project context</div><div class="layer-detail" id="project-detail"></div><div class="layer-chips" id="project-chips"></div></div><div class="layer-pct" id="project-pct">30%</div></article>
+      <article class="layer task"><div class="layer-icon">T</div><div class="layer-copy"><div class="layer-name">Actual task context</div><div class="layer-detail" id="task-detail"></div><div class="layer-chips" id="task-chips"></div></div><div class="layer-pct" id="task-pct">48%</div></article>
+      <div class="result"><div class="result-head"><span class="result-title" id="result-title">Developer context</span><span class="result-badge">Ready for the model</span></div><div class="context-meter" aria-label="Composed context proportions"><div class="meter-part meter-global" id="meter-global"></div><div class="meter-part meter-project" id="meter-project"></div><div class="meter-part meter-task" id="meter-task"></div></div></div>
+    </div>
+  </section>
+
+  <div class="tool-legend" aria-label="Context layer legend">
+    <div class="legend-item"><span class="legend-pip" style="background:var(--global)"></span>Global — reusable defaults</div>
+    <div class="legend-item"><span class="legend-pip" style="background:var(--project)"></span>Project — local knowledge</div>
+    <div class="legend-item"><span class="legend-pip" style="background:var(--task)"></span>Task — current intent</div>
+  </div>
+  <div class="tool-insight" id="insight"></div>
+
+  <section class="tuner" aria-labelledby="tuner-title">
+    <div class="tuner-head"><h2 class="panel-title" id="tuner-title">Tune the context mix</h2><p class="tuner-note">One 100% context budget. Moving one layer rebalances the other two.</p></div>
+    <div class="score-panel"><div class="score-number" id="score-number">96%</div><div class="score-copy"><strong id="score-label">Focused</strong><span id="score-caption">Every layer is inside its useful bracket.</span></div></div>
+    <p class="sr-only" id="live-summary" aria-live="polite"></p>
+    <div class="ctrl-row tune-global"><label class="ctrl-label" for="sl-global">Global standards</label><input type="range" min="0" max="100" value="22" id="sl-global"><output class="ctrl-val" id="lbl-global" for="sl-global">22%</output></div><div class="ctrl-help"><span>Sweet spot 15–25%</span><span class="ctrl-state" id="state-global">In range</span></div>
+    <div class="ctrl-row tune-project"><label class="ctrl-label" for="sl-project">Project knowledge</label><input type="range" min="0" max="100" value="30" id="sl-project"><output class="ctrl-val" id="lbl-project" for="sl-project">30%</output></div><div class="ctrl-help"><span>Sweet spot 25–35%</span><span class="ctrl-state" id="state-project">In range</span></div>
+    <div class="ctrl-row tune-task"><label class="ctrl-label" for="sl-task">Actual task</label><input type="range" min="0" max="100" value="48" id="sl-task"><output class="ctrl-val" id="lbl-task" for="sl-task">48%</output></div><div class="ctrl-help"><span>Sweet spot 45–55%</span><span class="ctrl-state" id="state-task">In range</span></div>
+    <div class="tune-recommendation" id="tune-recommendation"></div><div class="tune-actions"><button class="sweet-btn" id="sweet-btn" type="button">Use 20 / 30 / 50 sweet spot</button></div>
+  </section>
+
+  <section class="breakdown" aria-labelledby="breakdown-title"><h2 class="panel-title" id="breakdown-title">What reaches the model</h2><div id="bars"></div></section>
+</main>
+{% include "site-footer.njk" %}
