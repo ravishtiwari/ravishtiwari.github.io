@@ -4,7 +4,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
   eleventyConfig.addPassthroughCopy({ "assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "uploads": "uploads" });
-  eleventyConfig.addPassthroughCopy({ "context-tax": "context-tax" });
 
   return {
     dir: {

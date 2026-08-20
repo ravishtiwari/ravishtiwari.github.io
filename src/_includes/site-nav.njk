@@ -1,0 +1,25 @@
+<header class="nav ravishtiwari" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="/" aria-label="{{ site.name }} home">
+      <span class="mark">{{ site.initials }}</span>
+      <span><span class="brand-name">{{ site.name }}</span><span class="brand-sub">{{ site.role | upper }}</span></span>
+    </a>
+    <nav class="links" aria-label="Primary navigation">
+      {% for section in capabilities %}<a class="desktop-link" href="/#{{ section.id }}">{{ section.navLabel }}</a>{% endfor %}
+      <a class="desktop-link" href="/#writing">Writing</a>
+      <details class="nav-dropdown">
+        <summary>Tools/Solutions <span aria-hidden="true">▾</span></summary>
+        <div class="nav-dropdown-menu">
+          <a href="/context/"{% if page.url == '/context/' %} aria-current="page"{% endif %}>Context Tax</a>
+          <a href="/context/visualiser.html"{% if page.url == '/context/visualiser.html' %} aria-current="page"{% endif %}>Context Visualiser</a>
+        </div>
+      </details>
+    </nav>
+    <div class="nav-actions">
+      <div class="theme-wrap"><span class="theme-icon" aria-hidden="true">🎨</span><select id="theme-sel" class="theme-sel" aria-label="Choose colour theme">
+        <option value="github-light">GitHub Light</option><option value="dark-ubuntu">Dark Ubuntu</option><option value="dark-plus">Dark+</option><option value="monokai">Monokai</option><option value="solarized-dark">Solarized Dark</option><option value="nord">Nord</option>
+      </select><span class="theme-caret" aria-hidden="true">▾</span></div>
+      {% if page.url == '/' %}<button class="btn-filled" type="button" onclick="openResume()">Résumé <span class="arr">↗</span></button>{% else %}<a class="btn-filled" href="{{ site.resumePath }}">Résumé <span class="arr">↗</span></a>{% endif %}
+    </div>
+  </div>
+</header>

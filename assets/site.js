@@ -16,8 +16,8 @@
   };
   var allVars = Object.keys(themes['dark-plus']);
 
-  document.getElementById('yr').textContent = new Date().getFullYear();
-  window.addEventListener('scroll', function () { nav.classList.toggle('scrolled', window.scrollY > 8); }, { passive: true });
+  document.querySelectorAll('[data-current-year]').forEach(function (element) { element.textContent = new Date().getFullYear(); });
+  window.addEventListener('scroll', function () { if (nav) nav.classList.toggle('scrolled', window.scrollY > 8); }, { passive: true });
 
   window.applyTheme = function (key) {
     var root = document.documentElement;
@@ -25,9 +25,18 @@
     var overrides = themes[key];
     if (overrides) Object.keys(overrides).forEach(function (name) { root.style.setProperty(name, overrides[name]); });
     try { localStorage.setItem('portfolio-theme', key); } catch (error) {}
-    document.getElementById('theme-sel').value = key;
+    document.body.classList.toggle('light-theme', key === 'github-light');
+    var selector = document.getElementById('theme-sel');
+    if (selector) selector.value = key;
   };
   try { window.applyTheme(localStorage.getItem('portfolio-theme') || config.defaultTheme || 'github-light'); } catch (error) { window.applyTheme(config.defaultTheme || 'github-light'); }
+  var themeSelector = document.getElementById('theme-sel');
+  if (themeSelector) themeSelector.addEventListener('change', function () { window.applyTheme(this.value); });
+  document.addEventListener('click', function (event) {
+    document.querySelectorAll('.nav-dropdown[open]').forEach(function (dropdown) {
+      if (!dropdown.contains(event.target)) dropdown.removeAttribute('open');
+    });
+  });
   window.scrollToTop = function (event) { event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
 
   var revealEls = document.querySelectorAll('.reveal');
@@ -58,13 +67,13 @@
   function updatePdfUi() { document.getElementById('pdf-pages').textContent = pdfTotal ? pdfPage + ' / ' + pdfTotal : '— / —'; document.getElementById('pdf-prev').disabled = pdfPage <= 1; document.getElementById('pdf-next').disabled = pdfPage >= pdfTotal || !pdfTotal; }
   function renderPdfPage(pageNumber) { pdfDoc.getPage(pageNumber).then(function (page) { var canvas = document.getElementById('pdf-canvas'); var area = canvas.parentElement; var nativeViewport = page.getViewport({ scale: 1 }); var viewport = page.getViewport({ scale: Math.min((area.clientWidth - 48) / nativeViewport.width, 2.4) }); canvas.width = viewport.width; canvas.height = viewport.height; canvas.style.display = 'block'; page.render({ canvasContext: canvas.getContext('2d'), viewport: viewport }); }); }
   window.openResume = function () { var modal = document.getElementById('pdf-modal'); modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; document.getElementById('pdf-loading').style.display = 'block'; document.getElementById('pdf-error').style.display = 'none'; document.getElementById('pdf-canvas').style.display = 'none'; if (!window.pdfjsLib) { document.getElementById('pdf-error').style.display = 'block'; return; } window.pdfjsLib.getDocument(config.resumePath).promise.then(function (pdf) { pdfDoc = pdf; pdfPage = 1; pdfTotal = pdf.numPages; updatePdfUi(); document.getElementById('pdf-loading').style.display = 'none'; renderPdfPage(1); }).catch(function () { document.getElementById('pdf-loading').style.display = 'none'; document.getElementById('pdf-error').style.display = 'block'; }); };
-  window.closeResume = function () { document.getElementById('pdf-modal').style.display = 'none'; document.body.style.overflow = ''; pdfDoc = null; };
+  window.closeResume = function () { var modal = document.getElementById('pdf-modal'); if (!modal) return; modal.style.display = 'none'; document.body.style.overflow = ''; pdfDoc = null; };
   window.prevPage = function () { if (pdfPage > 1) { pdfPage--; updatePdfUi(); renderPdfPage(pdfPage); } };
   window.nextPage = function () { if (pdfPage < pdfTotal) { pdfPage++; updatePdfUi(); renderPdfPage(pdfPage); } };
   window.handlePdfOverlayClick = function (event) { if (event.target.id === 'pdf-modal') window.closeResume(); };
 
   window.openContact = function () { document.getElementById('contact-modal').style.display = 'flex'; document.body.style.overflow = 'hidden'; document.getElementById('contact-success').style.display = 'none'; document.getElementById('contact-form').style.display = 'flex'; document.getElementById('contact-form').reset(); document.getElementById('cname').focus(); };
-  window.closeContact = function () { document.getElementById('contact-modal').style.display = 'none'; document.body.style.overflow = ''; };
+  window.closeContact = function () { var modal = document.getElementById('contact-modal'); if (!modal) return; modal.style.display = 'none'; document.body.style.overflow = ''; };
   window.handleContactOverlayClick = function (event) { if (event.target.id === 'contact-modal') window.closeContact(); };
   window.submitContact = function (event) { event.preventDefault(); var form = event.target; var button = document.getElementById('contact-submit'); var error = document.getElementById('contact-error'); var endpoint = config.contact && config.contact.endpoint; error.style.display = 'none'; if (!endpoint) { error.textContent = 'Contact delivery is not configured yet.'; error.style.display = 'block'; return; } button.disabled = true; button.textContent = 'Sending…'; var data = new FormData(form); fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: data.get('cname'), email: data.get('cemail'), message: data.get('cmessage'), metadata: { origin: location.origin, referrer: document.referrer, userAgent: navigator.userAgent, pageUrl: location.href, submittedAt: new Date().toISOString() } }) }).then(function (response) { if (!response.ok) throw new Error('Request failed'); document.getElementById('contact-form').style.display = 'none'; document.getElementById('contact-success').style.display = 'block'; }).catch(function () { error.textContent = 'Something went wrong — please try again.'; error.style.display = 'block'; }).finally(function () { button.disabled = false; button.textContent = 'Send message ↗'; }); };
   document.addEventListener('keydown', function (event) { if (event.key === 'Escape') { window.closeResume(); window.closeContact(); } });

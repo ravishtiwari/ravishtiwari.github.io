@@ -1,0 +1,52 @@
+---
+layout: base.njk
+permalink: /context/
+title: The Context Tax
+description: An interactive view of how noise and repeated context reduce effective AI attention.
+bodyClass: tool-page context-tax-page
+pageStyles: /assets/context-tools.css
+pageScript: /assets/context-tax.js
+---
+{% include "site-nav.njk" %}
+<main class="tool-shell">
+  <p class="tool-kicker">Context management / AI tools</p>
+  <h1 class="tool-title">The <em>context tax</em></h1>
+  <p class="tool-subtitle">Every token your AI tool reads has a cost. When most of that window is noise, repeated preferences, and bloated history — the signal drowns.</p>
+
+  <div class="scenario-row" id="scenarios" role="group" aria-label="Context tax scenarios">
+    <button class="sc-btn active" type="button" data-id="bloated" aria-pressed="true">01 — Bloated</button>
+    <button class="sc-btn" type="button" data-id="medium" aria-pressed="false">02 — Partial</button>
+    <button class="sc-btn" type="button" data-id="lean" aria-pressed="false">03 — Lean</button>
+    <button class="sc-btn" type="button" data-id="global" aria-pressed="false">04 — Global config</button>
+  </div>
+
+  <section class="stat-row" aria-label="Context effectiveness">
+    <div class="stat"><div class="stat-label">Signal ratio</div><div class="stat-val" id="s-signal">12%</div></div>
+    <div class="stat"><div class="stat-label">Context tax</div><div class="stat-val bad" id="s-tax">88%</div></div>
+    <div class="stat"><div class="stat-label">Effective attention</div><div class="stat-val bad" id="s-attn">Low</div></div>
+  </section>
+
+  <section class="window-wrap" aria-labelledby="context-window-title">
+    <div class="window-chrome">
+      <span class="chrome-dot" style="background:var(--noise)"></span><span class="chrome-dot" style="background:var(--overhead)"></span><span class="chrome-dot" style="background:var(--signal)"></span>
+      <span class="chrome-title" id="context-window-title">Context window</span>
+    </div>
+    <div class="context-blocks" id="ctx-blocks"></div>
+  </section>
+
+  <div class="bars-wrap" id="bars"></div>
+  <div class="tool-legend" aria-label="Context category legend">
+    <div class="legend-item"><span class="legend-pip" style="background:var(--signal)"></span>Signal — task-relevant content</div>
+    <div class="legend-item"><span class="legend-pip" style="background:var(--noise)"></span>Noise — bloat, logs, old history</div>
+    <div class="legend-item"><span class="legend-pip" style="background:var(--overhead)"></span>Overhead — re-explaining preferences</div>
+  </div>
+  <div class="tool-insight" id="insight"></div>
+
+  <section class="controls-section" aria-labelledby="controls-title">
+    <h2 class="panel-title" id="controls-title">Adjust manually</h2>
+    <div class="ctrl-row"><label class="ctrl-label" for="sl-signal">Signal</label><input type="range" min="5" max="80" value="12" id="sl-signal" step="1"><output class="ctrl-val" id="lbl-signal" for="sl-signal">12%</output></div>
+    <div class="ctrl-row"><label class="ctrl-label" for="sl-noise">Noise</label><input type="range" min="0" max="80" value="60" id="sl-noise" step="1"><output class="ctrl-val" id="lbl-noise" for="sl-noise">60%</output></div>
+    <div class="ctrl-row"><label class="ctrl-label" for="sl-overhead">Overhead</label><input type="range" min="0" max="60" value="28" id="sl-overhead" step="1"><output class="ctrl-val" id="lbl-overhead" for="sl-overhead">28%</output></div>
+  </section>
+</main>
+{% include "site-footer.njk" %}
