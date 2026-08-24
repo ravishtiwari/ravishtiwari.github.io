@@ -9,6 +9,7 @@ pageScript: /assets/context-visualiser.js
 ---
 {% include "site-nav.njk" %}
 <main class="tool-shell">
+  {% include "context-path.njk" %}
   <p class="tool-kicker">Context management / composition</p>
   <h1 class="tool-title">See your <em>context stack</em></h1>
   <p class="tool-subtitle">Choose a working context. Watch global preferences, project knowledge, and the actual task compose into one focused context window.</p>
@@ -52,8 +53,26 @@ pageScript: /assets/context-visualiser.js
     <div class="ctrl-row tune-global"><label class="ctrl-label" for="sl-global">Global standards</label><input type="range" min="0" max="100" value="22" id="sl-global"><output class="ctrl-val" id="lbl-global" for="sl-global">22%</output></div><div class="ctrl-help"><span>Sweet spot 15–25%</span><span class="ctrl-state" id="state-global">In range</span></div>
     <div class="ctrl-row tune-project"><label class="ctrl-label" for="sl-project">Project knowledge</label><input type="range" min="0" max="100" value="30" id="sl-project"><output class="ctrl-val" id="lbl-project" for="sl-project">30%</output></div><div class="ctrl-help"><span>Sweet spot 25–35%</span><span class="ctrl-state" id="state-project">In range</span></div>
     <div class="ctrl-row tune-task"><label class="ctrl-label" for="sl-task">Actual task</label><input type="range" min="0" max="100" value="48" id="sl-task"><output class="ctrl-val" id="lbl-task" for="sl-task">48%</output></div><div class="ctrl-help"><span>Sweet spot 45–55%</span><span class="ctrl-state" id="state-task">In range</span></div>
-    <div class="tune-recommendation" id="tune-recommendation"></div><div class="tune-actions"><button class="sweet-btn" id="sweet-btn" type="button">Use 20 / 30 / 50 sweet spot</button></div>
+    <div class="tune-recommendation" id="tune-recommendation"></div>
+    <div class="tune-actions"><button class="sweet-btn" id="sweet-btn" type="button">Use 20 / 30 / 50 sweet spot</button></div>
   </section>
+
+  <aside class="references-drawer" aria-labelledby="references-toggle">
+    <button class="references-toggle" id="references-toggle" type="button" aria-expanded="false" aria-controls="references-panel">
+      <span>References</span><span class="references-caret" aria-hidden="true">▾</span>
+    </button>
+    <div class="references-panel" id="references-panel" aria-hidden="true" inert>
+      <div class="references-panel-inner">
+        <ul>
+          <li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener noreferrer">Effective Context Engineering for AI Agents</a> — Anthropic</li>
+          <li><a href="https://blog.langchain.com/context-engineering-for-agents/" target="_blank" rel="noopener noreferrer">Context Engineering for Agents</a> — LangChain (Lance Martin)</li>
+          <li><a href="https://trychroma.com/research/context-rot" target="_blank" rel="noopener noreferrer">Context Rot: How Increasing Input Tokens Impacts LLM Performance</a> — Chroma</li>
+          <li><a href="https://aclanthology.org/2024.tacl-1.9/" target="_blank" rel="noopener noreferrer">Lost in the Middle: How Language Models Use Long Contexts</a> — Liu et al., TACL 2024</li>
+          <li><a href="https://myengineeringpath.dev/genai-engineer/context-windows/" target="_blank" rel="noopener noreferrer">Context Windows &amp; Cost — Token Budgeting Guide</a> — MyEngineeringPath</li>
+        </ul>
+      </div>
+    </div>
+  </aside>
 
   <section class="breakdown" aria-labelledby="breakdown-title"><h2 class="panel-title" id="breakdown-title">What reaches the model</h2><div id="bars"></div></section>
 </main>

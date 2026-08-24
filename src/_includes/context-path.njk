@@ -1,0 +1,11 @@
+<nav class="context-path" aria-label="Context page navigation">
+  <ol>
+    <li class="context-path-root"><span>Context management</span></li>
+    <li>
+      {% if page.url == '/context/' %}<span aria-current="page">Context Tax</span>{% else %}<a href="/context/">Context Tax</a>{% endif %}
+    </li>
+    <li class="context-path-child">
+      {% if page.url == '/context/visualiser.html' %}<span aria-current="page">Context Visualiser</span>{% else %}<a href="/context/visualiser.html">Context Visualiser <span aria-hidden="true">↗</span></a>{% endif %}
+    </li>
+  </ol>
+</nav>
