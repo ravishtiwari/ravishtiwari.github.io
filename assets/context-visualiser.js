@@ -107,6 +107,17 @@
     document.getElementById('sl-' + scope).addEventListener('input', function () { renderMix(rebalance(index, Number(this.value))); });
     document.getElementById('sl-' + scope).addEventListener('change', function () { var result = metrics(currentMix); document.getElementById('live-summary').textContent = attentionMeta(result.attention).label + ': ' + result.attention + '% effective attention. ' + document.getElementById('tune-recommendation').textContent; });
   });
+  var referencesToggle = document.getElementById('references-toggle');
+  var referencesPanel = document.getElementById('references-panel');
+  function setReferencesOpen(open) {
+    referencesToggle.setAttribute('aria-expanded', String(open));
+    referencesPanel.setAttribute('aria-hidden', String(!open));
+    referencesPanel.classList.toggle('open', open);
+    if (open) referencesPanel.removeAttribute('inert');
+    else referencesPanel.setAttribute('inert', '');
+  }
+  referencesToggle.addEventListener('click', function () { setReferencesOpen(referencesToggle.getAttribute('aria-expanded') !== 'true'); });
+  referencesPanel.addEventListener('keydown', function (event) { if (event.key === 'Escape') { setReferencesOpen(false); referencesToggle.focus(); } });
   document.getElementById('sweet-btn').addEventListener('click', function () { renderMix([20, 30, 50]); });
   applyContext('developer');
 }());
