@@ -51,10 +51,11 @@
 .sc-btn.active{background:var(--accent);border-color:var(--accent);color:var(--md-sys-on-primary);font-weight:700}
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px}
 .stat{background:var(--bg2);border:1px solid var(--border);border-top:2px solid var(--border2);border-radius:8px;padding:16px 20px}
-.stat:nth-child(1){border-top-color:var(--signal)}.stat:nth-child(2){border-top-color:var(--noise)}.stat:nth-child(3){border-top-color:var(--overhead)}
+.stat:nth-child(1){--stat-color:var(--signal);border-top-color:var(--stat-color)}.stat:nth-child(2){--stat-color:var(--noise);border-top-color:var(--stat-color)}.stat:nth-child(3){--stat-color:var(--overhead);border-top-color:var(--stat-color)}
 .stat-label{color:var(--muted);font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
 .stat-val{font:300 clamp(20px,4.5vw,32px)/1 var(--mono);white-space:nowrap;transition:color .3s}
 .stat-val.good,.stat-val.focused{color:var(--signal)}.stat-val.med,.stat-val.workable{color:var(--overhead)}.stat-val.bad,.stat-val.fragile,.stat-val.mis-scoped{color:var(--noise)}
+.context-visualiser-page .stat-val{color:var(--stat-color);transition:none}
 .window-wrap,.visualiser{background:var(--bg);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:28px}
 .window-chrome{display:flex;align-items:center;gap:6px;padding:8px 12px;background:var(--bg2);border-bottom:1px solid var(--border)}
 .chrome-dot{width:8px;height:8px;border-radius:50%}.chrome-title{color:var(--muted);font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-left:auto}
